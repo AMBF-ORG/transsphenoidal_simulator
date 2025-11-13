@@ -4,7 +4,7 @@
 
 This repository presents TRIDENT, an open-source virtual simulation system developed for training and evaluating transsphenoidal surgery. The simulator is designed to replicate the complex anatomical and procedural challenges of transsphenoidal surgery. The system also features dual-instrument control of a surgical drill and endoscope within a narrow anatomical corridor, simulating the clinical constraints of this procedure. The system incorporates three types of anatomical models: rigid structures, deformable soft tissues, and drillable volumes for bone drilling. High-fidelity visual rendering and haptic feedback enhance realism and support accurate tool-tissue interaction.
 
-![image](resources/images/block_diagram-Diagram.drawio.png)
+![image](resources/images/MainFigure_new.png)
 
 The simulator builds upon the FIVRS bone drilling simulator (https://github.com/LCSR-SICKKIDS/volumetric_drilling), which itself is a plugin built on top of Asynchronous Multibody Framework ([AMBF](https://github.com/WPI-AIM/ambf)) developed by Munawar et al.
 
@@ -14,11 +14,14 @@ The simulator builds upon the FIVRS bone drilling simulator (https://github.com/
 
 Clone and build `ambf-2.0` branch.
 ```bash
-git clone https://github.com/WPI-AIM/ambf.git
+git clone git@github.com:hisashiishida/ambf.git
 cd ambf
 git checkout -b ambf-2.0 origin/ambf-2.0
 git pull
 ```
+
+**⚠️ Important:** Be sure to clone the fork, which has some important changes for use with the dVRK MTMs.
+
 Note that depth and image recording are enabled by default (in camera ADFs) and these features only work on Linux with ROS installed. Additionally, the following packages must be installed prior to building to AMBF:
 
 ```bash
