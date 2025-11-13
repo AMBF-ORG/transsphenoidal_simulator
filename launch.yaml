@@ -1,0 +1,18 @@
+# This is the base file for Coordination Application
+# world config: ADF/world/world.yaml
+world config: ADF/world/world.yaml
+color config: ADF/color/colors.yaml
+input devices config: ADF/input_devices/input_devices.yaml
+plugins: [
+  {
+    name: DRILLING_SIMULATOR,
+    filename: libvolumetric_drilling.so,
+    path: build/
+  }
+]
+multibody configs:
+  - "ADF/drills.yaml" #0
+  - "ADF/endoscope_camera.yaml" #1
+  - "ADF/volume.yaml" #2
+  - "ADF/face.yaml" #3
+  - "ADF/nose.yaml" #4

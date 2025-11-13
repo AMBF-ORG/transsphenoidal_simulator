@@ -1,0 +1,27 @@
+## Test config file for the spacenav
+
+control objects:
+# - CAMERA main_camera
+# - VOLUME mastoidectomy_volume
+- BODY Endoscope 35 degree in REMS
+# - BODY drill_reference
+# - BODY Base
+
+# Scaling for the motion
+scaling: [0.000001 , 0.000001, 0.000001, 0.001, 0.001, 0.001]
+# scaling: [0.01 , 0.01, 0.01, 0.000, 0.000, 0.000]
+
+# Deadbound
+deadbound:
+  translation: 0.1
+  rotation: 0.1
+
+
+# # The number of polls needed to be done 
+# # before the device is considered "static"
+static count threshold: 10
+
+# # Scaling used for moving the rigid bodys
+# velocity scaling:
+#   linear: 100.0
+#   angular: 2.0

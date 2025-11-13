@@ -1,0 +1,231 @@
+bodies:
+- BODY Endoscope 35 degree in REMS
+- BODY Endoscope Tip
+joints:
+- JOINT Endoscope 35 degree in REMS-Endoscope Tip
+cameras: [endoscopeCamera]
+sensors: [SENSOR Contact_Endoscope]
+lights: [endoscopeLight]
+high resolution path: ./meshes/high_res/
+low resolution path: ./meshes/low_res/
+ignore inter-collision: true
+namespace: /ambf/env/
+shaders:
+  path: shaders/phong/
+  vertex: shader.vs
+  fragment: shader.fs
+
+endoscopeLight:
+  namespace: lights/
+  name: endoscopeLight
+  location: {x: 0.0, y: 0.0, z: 0.0}
+  direction: {x: -1.0, y: 0, z: 0.0}
+  spot exponent: 5.0
+  shadow quality: 5
+  cutoff angle: 1.0
+  attenuation: {constant: 1.0, linear: 0.0, quadratic: 10.0}
+  parent: Endoscope 35 degree in REMS
+
+endoscopeCamera:
+  namespace: cameras/
+  name: endoscopeCamera
+  location: {x: 0.0, y: 0.0, z: 0.0}
+  # location: {x: -0.075, y: 0.0, z: 0.0}
+  # 45 deg angle
+  # look at: {x: -0.707, y: 0.707, z: 0.0}
+  # up: {x: -0.707, y: -0.707, z: 0.0}
+  # 0 deg angle
+  look at: {x: -1.0, y: 0.0, z: 0.0}
+  # look at: {x: -1.0, y: 0.1, z: 0.0}
+  up: {x: 0.0, y: 0.0, z: 1.0}
+  clipping plane: {near: 0.00001, far: 10.0}
+  field view angle: 0.8 
+  window resolution: {width: 1920, height: 1080}
+  camera intrinsics: {fx: 680.0813, fy: 680.0813, cx: 966.6465, cy: 436.9817, s: 0.0}
+  monitor: 0
+  # stereo: {mode: Passive, eye separation: 0.22, focal length: 2.0}
+  parent: Endoscope 35 degree in REMS
+  # multipass: True
+  plugins: [
+    {
+      name: camera_distortion_plugin,
+      path: ../plugin/ambf_camera_distortion_plugin/build,
+      filename: libambf_camera_distortion_plugin.so,
+      distortion_config: plugin_config/ambf_camera_distortion_plugin/config.yaml,
+      vertex_shader: plugin_config/ambf_camera_distortion_plugin/camera_distortion.vs,
+      fragment_shader: plugin_config/ambf_camera_distortion_plugin/camera_distortion.fs
+    }
+  ]
+  # publish image: true
+  # publish image interval: 1   # Publish every nth scene update
+  # publish image resolution: {width: 1920, height: 1080}
+  # publish depth: true
+  # publish depth interval: 100 # Publish every nth scene update
+  # publish depth resolution: {width: 1920, height: 1080}
+  # publish depth noise: {mean: 0.1, std_dev: 0.01, bias: 0.0}
+
+BODY Endoscope 35 degree in REMS:
+  name: Endoscope 35 degree in REMS
+  mesh: Endoscope 35 degree in REMS dVRK.OBJ
+  mass: 10.0
+  collision margin: 0.001
+  scale: 1.0
+  location:
+    position:
+      x: -1.0
+      y: -0.19  # CHANGE HERE
+      z: -0.2
+    # set initial rotation to something similar what the haptic device sets the drill to
+    orientation:
+      r: -1.507
+      p: -0.6
+      y: 0.0
+  inertial offset:
+    position:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    orientation:
+      r: 0
+      p: 0
+      y: 0
+  passive: false
+  publish children names: false
+  publish joint names: false
+  publish joint positions: false
+  friction:
+    rolling: 1.2
+    static: 0.9
+  restitution: 0.1
+  damping:
+    angular: 0.99
+    linear: 0.99
+  visible: true
+  enable feedback: true
+  collision groups: [1, 3, 4, 5, 6, 7]
+  collision shape: CAPSULE
+  collision geometry:
+    axis: X
+    height: 0.20
+    radius: 0.0021
+  collision offset:
+    position:
+      x: 0.10
+      y: 0.0
+      z: 0.0
+    orientation:
+      r: 0.0
+      p: 0.0
+      y: 0.0
+  use material: false
+  color components:
+    ambient:
+      level: 1.0
+    diffuse:
+      b: 0.3185
+      g: 0.1857
+      r: 0.2791
+    specular:
+      b: 0.09285
+      g: 0.09285
+      r: 0.13955
+    transparency: 1.0
+  controller:
+    linear: {P: 10, I: 0, D: 1}
+    angular: {P: 20, I: 0, D: 1}
+  controller output type: velocity
+  
+BODY Endoscope Tip:
+  name: Endoscope Tip
+  mesh: Endoscope Tip.OBJ
+  mass: 0.1
+  collision margin: 0.001
+  scale: 1.0
+  location:
+    position:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    orientation:
+      r: 0.0
+      p: 0.0
+      y: 0.0
+  inertial offset:
+    position:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    orientation:
+      r: 0
+      p: 0
+      y: 0
+  passive: false
+  publish children names: false
+  publish joint names: false
+  publish joint positions: false
+  friction:
+    rolling: 0.1
+    static: 0.5
+  restitution: 0.1
+  damping:
+    angular: 0.1
+    linear: 0.5
+  visible: false
+  collision groups: [1, 3]
+  collision shape: SPHERE
+  collision geometry:
+    radius: 0.001
+  collision offset:
+    position:
+      x: 0.0
+      y: 0.0
+      z: 0.0
+    orientation:
+      r: 0.0
+      p: 0.0
+      y: 0.0
+  color components:
+    ambient:
+      level: 1.0
+    diffuse:
+      b: 0.1025
+      g: 0.1025
+      r: 0.1025
+    specular:
+      b: 0.0512
+      g: 0.0512
+      r: 0.0512
+    transparency: 1.0
+
+JOINT Endoscope 35 degree in REMS-Endoscope Tip:
+  name: Endoscope 35 degree in REMS-Endoscope Tip
+  parent: BODY Endoscope 35 degree in REMS
+  child: BODY Endoscope Tip
+  parent axis:
+    x: 0.0
+    y: 1.0
+    z: 0.0
+  parent pivot:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  child axis:
+    x: 0.0
+    y: 1.0
+    z: 0.0
+  child pivot:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  enable feedback: true
+  type: fixed
+
+SENSOR Contact_Endoscope:
+  name: Contact_Endoscope
+  parent: BODY Endoscope 35 degree in REMS 
+  type: CONTACT
+  distance threshold: 0.000001
+  process contact details: true
+  visible: False
+  visible size: 10
+  # publish frequency: {low: 1, high: 1}

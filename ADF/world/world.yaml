@@ -1,0 +1,88 @@
+enclosure size: {length: 10.0, width: 10.0, height: 3.0}
+lights: [light1]
+cameras: [main_camera, camera1]
+# cameras: [main_camera, cameraL, cameraR]
+environment: ./checkered_floor.yaml
+namespace: /ambf/env/
+max iterations: 50
+gravity: {x: 0.0, y: 0.0, z: -0.0}
+conversion factor: 1.0
+# shaders:
+#   path: ../../ambf_shaders/normal_map
+#   vertex: shader.vs
+#   fragment: shader.fs
+
+light1:
+  namespace: lights/
+  name: light1
+  location: {x: 0.0, y: 0.0, z: 0.0}
+  direction: {x: -1.0, y: 0.0, z: 0.0}
+  spot exponent: 0.3
+  shadow quality: 5
+  cutoff angle: 0.5
+  attenuation: {constant: 10.0, linear: 1.0, quadratic: 1.0}
+  parent: main_camera
+
+main_camera:
+  namespace: cameras/
+  name: main_camera
+
+  # Option 1: orthognal
+  location: {x: -0.2, y: 0.0, z: -1.0}
+  look at: {x: -0.2, y: 0.0, z: 0.0}
+  up: {x: 1.0, y: 0.0, z: 0.0}
+
+  # Option 2: Tilted
+  # location: {x: 0.5, y: 0.0, z: -0.5}
+  # look at: {x: -0.3, y: 0.0, z: -0.025}
+  # up: {x: 0.5, y: 0.0, z: 0.866}
+
+  # location: {x: 0.5, y: 0.0, z: 0.0}
+  # look at: {x: -0.3, y: 0.0, z: 0.0}
+  # up: {x: 0.0, y: 0.0, z: 1.0}
+  clipping plane: {near: 0.1, far: 50.0}
+  field view angle: 0.17951634837990105 # so that focal length is approximately 1000px and phantom is 250 mm away
+  window resolution: {width: 1920, height: 1080}
+  monitor: 0
+  mouse control multipliers: {pan: 0.2, rotate: 0.2, scroll: 0.2, arcball: 0.2} # <--- All Optional multipliers set
+  # multipass: true
+  visible: true
+  # publish image: true
+  # preprocessing shaders:
+  #    path: ../shaders/preprocessing/
+  #    vertex: shader.vs
+  #    fragment: shader.fs
+  # publish image interval: 5   # Publish every nth scene update
+  # publish depth: true
+  # publish depth noise: {mean: 0.1, std_dev: 0.01, bias: 0.0}
+  # publish depth interval: 1 # Publish every nth scene update
+  # publish image resolution: {width: 640, height: 480}
+  # depth compute shaders:
+  #    path: ../../../ambf_shaders/depth
+  #    vertex: shader.vs
+  #    fragment: shader.fs
+
+  # multipass: true
+  # publish image: true
+  # publish image interval: 1   # Publish every nth scene update
+  # publish image resolution: {width: 1920, height: 1080}
+
+camera1:
+  namespace: cameras/
+  name: camera1
+  # Option 1: orthognal
+  # location: {x: -0.30, y: 0.0, z: -1.0}
+  # look at: {x: -0.30, y: 0.0, z: 0.0}
+  # up: {x: 1.0, y: 0.0, z: 0.0}
+
+  # Option 2: Tilted
+  location: {x: 0.5, y: 0.0, z: -0.5}
+  look at: {x: -0.3, y: 0.0, z: -0.025}
+  up: {x: 0.5, y: 0.0, z: 0.866}
+  clipping plane: {near: 0.1, far: 50.0}
+  field view angle: 0.17951634837990105 # so that focal length is approximately 1000px and phantom is 250 mm away
+  window resolution: {width: 1920, height: 1080}
+  monitor: 1
+  mouse control multipliers: {pan: 0.2, rotate: 0.2, scroll: 0.2, arcball: 0.2} # <--- All Optional multipliers set
+
+

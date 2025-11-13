@@ -1,0 +1,44 @@
+ADF Version: 1.0
+volumes:
+- VOLUME volume
+bodies:
+- BODY volume_Anatomical_Origin
+VOLUME volume:
+  name: volume
+  location:
+    position:
+      x: 0.013528576504419505
+      y: -0.03857274861175813
+      z: -0.04869845227201921
+    orientation:
+      p: 0.0
+      r: 0.3493548503908204
+      y: -3.01941960595019
+  scale: 1.0
+  dimensions:
+    x: 0.19073833599999984
+    y: 0.2191024420000003
+    z: 0.2240353363409317
+  images:
+    count: 545
+    format: png
+    path: ../resources/volume/slices
+    prefix: slice0
+  iso-surface value: 0.5
+  parent: BODY volume_Anatomical_Origin
+  shaders:
+    path: shaders/volume
+    vertex: shader.vs
+    fragment: shader.fs
+BODY volume_Anatomical_Origin:
+  name: volume_Anatomical_Origin
+  location:
+    position:
+      x: -0.35
+      y: -0.0
+      z: 0.0
+    orientation:
+      p: 0.0
+      r: 0.0
+      y: 1.57
+  mass: 0.0

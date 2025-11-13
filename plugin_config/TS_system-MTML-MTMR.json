@@ -1,0 +1,43 @@
+{
+    "$id": "dvrk-system.schema.json",
+    "$version": "1",
+    "IOs":
+    [
+        {
+            "name": "IO1",
+            "port": "fw"
+        }
+    ]
+    ,
+    "arms":
+    [
+        {
+            "name": "MTML",
+            "type": "MTM",
+            "serial": "22723",
+            "IO": "IO1"
+        }
+        ,
+        {
+            "name": "MTMR",
+            "type": "MTM",
+            "serial": "28247",
+            "IO": "IO1"
+        }
+    ]
+    ,
+    "consoles" : 
+    [
+        {
+            "IO_pedals" : 
+            {
+                "IO" : "IO1",
+                "IO_file" : "io/sawRobotIO1394-MTMR-foot-pedals-QLA1.json"
+            },
+            "input_type" : "PEDALS_ONLY",
+            "name" : "console",
+            "teleop_ECMs" : [],
+            "teleop_PSMs" : []
+        }
+    ]
+}

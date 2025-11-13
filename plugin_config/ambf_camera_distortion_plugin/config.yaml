@@ -1,0 +1,15 @@
+## Example json file for ambf_camera_distortion_plugin
+## Type: pinhole
+
+type: pinhole
+image_size: [1920, 1080]
+intrinsic:
+  fx: 680.0813
+  fy: 680.0813
+  cx: 966.6465
+  cy: 436.9817
+# NOTE: order of distortion parameters is from OpenCV
+radial_distortion_coeffs: [-0.42097, 0.2467, -0.07628, 0.0]  # k1, k2, k3, k4
+tangential_distortion_coeffs: [0.00109, -0.00124]  # p1, p2
+chromatic_distortion: [1.0, 1.0, 1.0] # [Optional]
+blackout: true # default is false too
