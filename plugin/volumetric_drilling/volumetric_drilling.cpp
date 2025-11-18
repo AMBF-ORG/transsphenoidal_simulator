@@ -1,8 +1,7 @@
 //==============================================================================
 /*
     Software License Agreement (BSD License)
-    Copyright (c) 2019-2022, AMBF
-    (https://github.com/WPI-AIM/ambf)
+    Copyright (c) 2019-2025 
 
     All rights reserved.
 

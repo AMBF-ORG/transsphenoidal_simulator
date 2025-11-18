@@ -1,10 +1,24 @@
 # Transsphenoidal Surgical Simulator
+This is the official repository for TRIDENT: Transsphenoidal surgical simulation for Realistic Interactive Drilling and Endoscope Navigation Training. 
 
+[Paper](link_to_be_added) | [Video](link_to_be_added)
+
+```bibtex
+@article{ishida2025TRIDENT,
+    author = {Ishida*, Hisashi and Ying*, Andrew and Ding, Andy S. and Heo, Yub and Wang,   
+    Jonathan and Vedula, Swaroop and Ishida, Wataru and Taylor, Russell and Ishii, Masaru 
+    and Munawar, Adnan},
+    title = {TRIDENT: Transsphenoidal Surgical Simulator for Realistic Interactive Drilling 
+    and Endoscope Navigation Training.},
+    note = {Under Review for Journal of Medical Robotics Research},
+    year = 2025
+}
+```
 ## Overview
 
 This repository presents TRIDENT, an open-source virtual simulation system developed for training and evaluating transsphenoidal surgery. The simulator is designed to replicate the complex anatomical and procedural challenges of transsphenoidal surgery. The system also features dual-instrument control of a surgical drill and endoscope within a narrow anatomical corridor, simulating the clinical constraints of this procedure. The system incorporates three types of anatomical models: rigid structures, deformable soft tissues, and drillable volumes for bone drilling. High-fidelity visual rendering and haptic feedback enhance realism and support accurate tool-tissue interaction.
 
-![image](resources/images/MainFigure_new.png)
+![image](media/MainFigure_new.png)
 
 The simulator builds upon the FIVRS bone drilling simulator (https://github.com/LCSR-SICKKIDS/volumetric_drilling), which itself is a plugin built on top of Asynchronous Multibody Framework ([AMBF](https://github.com/WPI-AIM/ambf)) developed by Munawar et al.
 
