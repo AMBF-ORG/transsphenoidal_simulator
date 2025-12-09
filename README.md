@@ -10,7 +10,7 @@ This is the official repository for TRIDENT: Transsphenoidal surgical simulation
     and Munawar, Adnan},
     title = {TRIDENT: Transsphenoidal Surgical Simulator for Realistic Interactive Drilling 
     and Endoscope Navigation Training.},
-    note = {Under Review for Journal of Medical Robotics Research},
+    note = {Under Review},
     year = 2025
 }
 ```
