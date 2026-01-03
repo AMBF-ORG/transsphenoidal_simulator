@@ -90,10 +90,39 @@ with open(Path("~/transsphenoidal_simulator/ADF/world/world.yaml").expanduser(),
 # bag_file = Path('~/Documents/recordings/userstudy/TS_data_user02_2_2025-10-28-11-36-06.bag').expanduser()
 # fOFFSET = 200
 # bOFFSET = -300
-bag_file = Path('~/Documents/recordings/userstudy/TS_data_user03_rightnose_2025-10-28-15-27-18.bag').expanduser()
-fOFFSET = 400
-bOFFSET = -400
-USER = "user03"
+# bag_file = Path('~/Documents/recordings/userstudy/TS_data_user03_rightnose_2025-10-28-15-27-18.bag').expanduser()
+# fOFFSET = 400
+# bOFFSET = -400
+# USER = "user03"
+
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_TS_user4.bag').expanduser()
+# USER="user04"
+# fOFFSET = 0
+# bOFFSET = -1
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_TS_user4_LN.bag').expanduser()
+# USER="user04_LN"
+# fOFFSET = 0
+# bOFFSET = -1
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_TS_user5_LN.bag').expanduser()
+# USER="user05_LN"
+# fOFFSET = 0
+# bOFFSET = -1
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_User6.bag').expanduser()
+# USER="user06"
+# fOFFSET = 0
+# bOFFSET = -1
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_User6_LS.bag').expanduser()
+# USER="user06_LN"
+# fOFFSET = 0
+# bOFFSET = -1
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_User7.bag').expanduser()
+# USER="user07"
+# fOFFSET = 0
+# bOFFSET = -1
+bag_file = Path('~/Documents/recordings/userstudy/20251212_User8.bag').expanduser()
+USER="user08"
+fOFFSET = 0
+bOFFSET = -1
 
 topic_name = '/ambf/env/Endoscope35degreeinREMS/State'
 

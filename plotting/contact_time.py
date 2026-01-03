@@ -80,11 +80,26 @@ def setAxesScaleEqual(ax):
     ax.set_ylim3d([centers[1] - half_range, centers[1] + half_range])
     ax.set_zlim3d([centers[2] - half_range, centers[2] + half_range])
 
-bag_file = Path('~/Documents/recordings/userstudy/TS_data_user01_2025-10-28-09-15-55.bag').expanduser()
-USER = "user01"
+# bag_file = Path('~/Documents/recordings/userstudy/TS_data_user01_2025-10-28-09-15-55.bag').expanduser()
+# USER = "user01"
 # bag_file = Path('~/Documents/recordings/userstudy/TS_data_user02_2_2025-10-28-11-36-06.bag').expanduser()
 # bag_file = Path('~/Documents/recordings/userstudy/TS_data_user03_rightnose_2025-10-28-15-27-18.bag').expanduser()
 # USER = "user03"
+
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_TS_user4.bag').expanduser()
+# USER="user04"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_TS_user4_LN.bag').expanduser()
+# USER="user04_LN"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_TS_user5_LN.bag').expanduser()
+# USER="user05_LN"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_User6.bag').expanduser()
+# USER="user06"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_User6_LS.bag').expanduser()
+# USER="user06_LN"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_User7.bag').expanduser()
+# USER="user07"
+bag_file = Path('~/Documents/recordings/userstudy/20251212_User8.bag').expanduser()
+USER="user08"
 
 topic_name = '/ambf/env/plugin/volumetric_drilling/endoscope/drill_rbforce_feedback'
 force_map = {}
@@ -170,18 +185,18 @@ try:
 except KeyError:
     print("NO FACE FORCES")
 
+if cp_forces is not None and cp_times is not None:
+    cp_times -= cp_times.min()
 
-cp_times -= cp_times.min()
+    cp_forces = cp_forces[np.argsort(cp_times)]
+    cp_times = np.sort(cp_times)
 
-cp_forces = cp_forces[np.argsort(cp_times)]
-cp_times = np.sort(cp_times)
-
-cp_times_stagger = np.sort(np.concatenate([cp_times, cp_times + 1e-9]))
-cp_forces_stagger = np.zeros_like(cp_times_stagger)
-cp_forces_stagger[::2] = cp_forces
+    cp_times_stagger = np.sort(np.concatenate([cp_times, cp_times + 1e-9]))
+    cp_forces_stagger = np.zeros_like(cp_times_stagger)
+    cp_forces_stagger[::2] = cp_forces
 
 
-plt.step(cp_times_stagger, cp_forces_stagger, where="post", label="Anatomy")
+    plt.step(cp_times_stagger, cp_forces_stagger, where="post", label="Anatomy")
 
 plt.xlabel('Time (s)')
 plt.ylabel('Force (N)')

@@ -166,10 +166,25 @@ def setAxesScaleEqual(ax):
     ax.set_ylim3d([centers[1] - half_range, centers[1] + half_range])
     ax.set_zlim3d([centers[2] - half_range, centers[2] + half_range])
 
-bag_file = Path('~/Documents/recordings/userstudy/TS_data_user01_2025-10-28-09-15-55.bag').expanduser()
-USER = "user01"
+# bag_file = Path('~/Documents/recordings/userstudy/TS_data_user01_2025-10-28-09-15-55.bag').expanduser()
+# USER = "user01"
 # bag_file = Path('~/Documents/recordings/userstudy/TS_data_user02_2_2025-10-28-11-36-06.bag').expanduser()
 # bag_file = Path('~/Documents/recordings/userstudy/TS_data_user03_rightnose_2025-10-28-15-27-18.bag').expanduser()
+
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_TS_user4.bag').expanduser()
+# USER="user04"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_TS_user4_LN.bag').expanduser()
+# USER="user04_LN"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_TS_user5_LN.bag').expanduser()
+# USER="user05_LN"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_User6.bag').expanduser()
+# USER="user06"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_User6_LS.bag').expanduser()
+# USER="user06_LN"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_User7.bag').expanduser()
+# USER="user07"
+bag_file = Path('~/Documents/recordings/userstudy/20251212_User8.bag').expanduser()
+USER="user08"
 
 topic_name = '/ambf/env/plugin/volumetric_drilling/endoscope/drill_rbforce_feedback'
 force_map = {}
@@ -317,6 +332,8 @@ plt.show()
 
 ############
 
+cp_forces = None
+cps = None
 try:
     cps = contact_points["/ambf/env/BODY NoseGhost"]
     cp_forces = np.array(contact_forces["/ambf/env/BODY NoseGhost"])
@@ -342,48 +359,49 @@ except KeyError:
     print("NO FACE FORCES")
 
 
-surf_forces = compute_surface_forces(mesh_points, cps, cp_forces, sigma=1e-3)
+if cp_forces is not None and cps is not None:
+    surf_forces = compute_surface_forces(mesh_points, cps, cp_forces, sigma=1e-3)
 
-fig, ax = plt.subplots(subplot_kw={"projection": "3d"}, figsize=(16, 9))
+    fig, ax = plt.subplots(subplot_kw={"projection": "3d"}, figsize=(16, 9))
 
-forces_cyl, forces_top, forces_bot = np.split(unit_scale(surf_forces, surf_forces_all), (np.prod(x_cyl.shape), np.prod(x_cyl.shape) + np.prod(x_top.shape)))
+    forces_cyl, forces_top, forces_bot = np.split(unit_scale(surf_forces, surf_forces_all), (np.prod(x_cyl.shape), np.prod(x_cyl.shape) + np.prod(x_top.shape)))
 
-surf_cyl = ax.plot_surface(x_cyl, y_cyl, z_cyl, rstride=1, cstride=1, facecolors=cm.jet(forces_cyl.reshape(x_cyl.shape)))
-surf_top = ax.plot_surface(x_top, y_top, z_top, rstride=1, cstride=1, facecolors=cm.jet(forces_top.reshape(x_top.shape)))
-surf_bot = ax.plot_surface(x_bot, y_bot, z_bot, rstride=1, cstride=1, facecolors=cm.jet(forces_bot.reshape(x_bot.shape)))
+    surf_cyl = ax.plot_surface(x_cyl, y_cyl, z_cyl, rstride=1, cstride=1, facecolors=cm.jet(forces_cyl.reshape(x_cyl.shape)))
+    surf_top = ax.plot_surface(x_top, y_top, z_top, rstride=1, cstride=1, facecolors=cm.jet(forces_top.reshape(x_top.shape)))
+    surf_bot = ax.plot_surface(x_bot, y_bot, z_bot, rstride=1, cstride=1, facecolors=cm.jet(forces_bot.reshape(x_bot.shape)))
 
-# sc = ax.scatter(cps[:, 0], cps[:, 1], cps[:, 2], c=cp_forces, cmap='viridis')
+    # sc = ax.scatter(cps[:, 0], cps[:, 1], cps[:, 2], c=cp_forces, cmap='viridis')
 
-mesh = [vertices[face] for face in faces]
+    mesh = [vertices[face] for face in faces]
 
-collection = Poly3DCollection(mesh, alpha=0.8, edgecolor='none')
-collection.set_facecolor((0.279, 0.184, 0.319, 1.0))
+    collection = Poly3DCollection(mesh, alpha=0.8, edgecolor='none')
+    collection.set_facecolor((0.279, 0.184, 0.319, 1.0))
 
-ax.add_collection3d(collection)
+    ax.add_collection3d(collection)
 
-sm = cm.ScalarMappable(norm=mpcolors.Normalize(vmin=surf_forces_all.min(), vmax=surf_forces_all.max()), cmap=cm.jet)
+    sm = cm.ScalarMappable(norm=mpcolors.Normalize(vmin=surf_forces_all.min(), vmax=surf_forces_all.max()), cmap=cm.jet)
 
-cbar = fig.colorbar(sm, ax=ax, pad=0.1)  # pad adjusts spacing
-cbar.set_label('Force (N)', labelpad=15)
+    cbar = fig.colorbar(sm, ax=ax, pad=0.1)  # pad adjusts spacing
+    cbar.set_label('Force (N)', labelpad=15)
 
-ax.set_xlabel('X (m)', labelpad=35)
-ax.set_ylabel('Y (m)', labelpad=35)
-ax.set_zlabel('Z (m)', labelpad=45)
-ax.set_title('Endoscope Contact Force from Anatomy')
-ax.set_box_aspect([1,1,1])
-setAxesScaleEqual(ax)
-ax.view_init(elev=30, azim=-135)
+    ax.set_xlabel('X (m)', labelpad=35)
+    ax.set_ylabel('Y (m)', labelpad=35)
+    ax.set_zlabel('Z (m)', labelpad=45)
+    ax.set_title('Endoscope Contact Force from Anatomy')
+    ax.set_box_aspect([1,1,1])
+    setAxesScaleEqual(ax)
+    ax.view_init(elev=30, azim=-135)
 
-ax.xaxis.set_major_locator(MaxNLocator(nbins=5))
-ax.yaxis.set_major_locator(MaxNLocator(nbins=5))
-ax.zaxis.set_major_locator(MaxNLocator(nbins=5))
-ax.set_xticklabels([f"{x:.3f}" for x in ax.get_xticks()], rotation=0, ha='left')
-ax.set_yticklabels([f"{x:.3f}" for x in ax.get_yticks()], rotation=-0, ha='right')
-ax.set_zticklabels([f"{x:.3f}" for x in ax.get_zticks()], rotation=0, ha='right')
+    ax.xaxis.set_major_locator(MaxNLocator(nbins=5))
+    ax.yaxis.set_major_locator(MaxNLocator(nbins=5))
+    ax.zaxis.set_major_locator(MaxNLocator(nbins=5))
+    ax.set_xticklabels([f"{x:.3f}" for x in ax.get_xticks()], rotation=0, ha='left')
+    ax.set_yticklabels([f"{x:.3f}" for x in ax.get_yticks()], rotation=-0, ha='right')
+    ax.set_zticklabels([f"{x:.3f}" for x in ax.get_zticks()], rotation=0, ha='right')
 
-plt.savefig(USER + "_contact_force_anatomy.pdf")
+    plt.savefig(USER + "_contact_force_anatomy.pdf")
 
-plt.show()
+    plt.show()
 #####################################################################################################
 
 # fig = plt.figure()

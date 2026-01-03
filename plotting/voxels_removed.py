@@ -86,18 +86,32 @@ def getCameraRot(pos: np.ndarray, lookAt: np.ndarray, up: np.ndarray) -> np.ndar
 # USER="user01"
 # bag_file = Path('~/Documents/recordings/userstudy/TS_data_user02_2_2025-10-28-11-36-06.bag').expanduser()
 # USER="user02"
-bag_file = Path('~/Documents/recordings/userstudy/TS_data_user03_rightnose_2025-10-28-15-27-18.bag').expanduser()
-USER="user03"
+# bag_file = Path('~/Documents/recordings/userstudy/TS_data_user03_rightnose_2025-10-28-15-27-18.bag').expanduser()
+# USER="user03"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_TS_user4.bag').expanduser()
+# USER="user04"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_TS_user4_LN.bag').expanduser()
+# USER="user04_LN"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_TS_user5_LN.bag').expanduser()
+# USER="user05_LN"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_User6.bag').expanduser()
+# USER="user06"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_User6_LS.bag').expanduser()
+# USER="user06_LN"
+# bag_file = Path('~/Documents/recordings/userstudy/20251212_User7.bag').expanduser()
+# USER="user07"
+bag_file = Path('~/Documents/recordings/userstudy/20251212_User8.bag').expanduser()
+USER="user08"
 
 T_w_i = None
 img_dims = None
-with open(Path("~/transsphenoidal_simulator/volume/volume.yaml").expanduser(), "r") as f:
+with open(Path("~/transsphenoidal_simulator/ADF/volume.yaml").expanduser(), "r") as f:
     data = yaml.safe_load(f)
     volname = data["volumes"][0]
     dims = data[volname]["dimensions"]
     voldims = np.array((dims["x"], dims["y"], dims["z"]))
     img_count = data[volname]["images"]["count"]
-    img = mpimg.imread(Path("~/transsphenoidal_simulator/volume").expanduser() / data[volname]["images"]["path"] / "slice00.png")
+    img = mpimg.imread((Path("~/transsphenoidal_simulator/volume").expanduser() / data[volname]["images"]["path"] / "slice00.png").resolve())
     img_height, img_width = img.shape[:2]
 
     img_dims = np.array([img_height, img_width, img_count])
@@ -163,10 +177,11 @@ indices = np.column_stack(indices_ls)
 colors = np.column_stack(colors_ls)
 
 colors_unq = np.unique(colors, axis=1)
-sphenoid_mask = (colors == colors_unq[:, [3]]).all(axis=0)
-sphenoid_col = np.array([[255, 255, 167, 255]]).T / 255
+if colors_unq.shape[1] > 3:
+    sphenoid_mask = (colors == colors_unq[:, [3]]).all(axis=0)
+    sphenoid_col = np.array([[255, 255, 167, 255]]).T / 255
 
-colors[:, sphenoid_mask] = sphenoid_col
+    colors[:, sphenoid_mask] = sphenoid_col
 
 indices_rel = indices - indices.min(axis=1, keepdims=True)
 xmax, ymax, zmax = indices_rel.max(axis=1) + 1
@@ -212,15 +227,24 @@ legend_elements = [
 ]
 
 
-ax.view_init(elev=30, azim=-45)
+if USER.endswith("_LN"):
+    ax.view_init(elev=30, azim=45)
+else:
+    ax.view_init(elev=30, azim=-45)
 
 
 ax.xaxis.set_major_locator(MaxNLocator(nbins=5))
 ax.yaxis.set_major_locator(MaxNLocator(nbins=5))
 ax.zaxis.set_major_locator(MaxNLocator(nbins=5))
-ax.set_xticklabels([f"{x:.3f}" for x in ax.get_xticks()], rotation=0, ha='right')
-ax.set_yticklabels([f"{x:.3f}" for x in ax.get_yticks()], rotation=-0, ha='left')
-ax.set_zticklabels([f"{x:.3f}" for x in ax.get_zticks()], rotation=0, ha='left')
+
+if USER.endswith("_LN"):
+    ax.set_xticklabels([f"{x:.3f}" for x in ax.get_xticks()], rotation=0, ha='left')
+    ax.set_yticklabels([f"{x:.3f}" for x in ax.get_yticks()], rotation=-0, ha='right')
+    ax.set_zticklabels([f"{x:.3f}" for x in ax.get_zticks()], rotation=0, ha='right')
+else:
+    ax.set_xticklabels([f"{x:.3f}" for x in ax.get_xticks()], rotation=0, ha='right')
+    ax.set_yticklabels([f"{x:.3f}" for x in ax.get_yticks()], rotation=-0, ha='left')
+    ax.set_zticklabels([f"{x:.3f}" for x in ax.get_zticks()], rotation=0, ha='left')
 
 plt.savefig(USER + "_voxels.pdf")
 
