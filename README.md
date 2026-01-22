@@ -4,14 +4,14 @@ This is the official repository for TRIDENT: Transsphenoidal surgical simulation
 [Paper](link_to_be_added) | [Video](link_to_be_added)
 
 ```bibtex
-@article{ishida2025TRIDENT,
+@article{ishida2026TRIDENT,
     author = {Ishida*, Hisashi and Ying*, Andrew and Ding, Andy S. and Heo, Yub and Wang,   
     Jonathan and Vedula, Swaroop and Ishida, Wataru and Taylor, Russell and Ishii, Masaru 
     and Munawar, Adnan},
     title = {TRIDENT: Transsphenoidal Surgical Simulator for Realistic Interactive Drilling 
-    and Endoscope Navigation Training.},
+    and Endoscope Navigation Training},
     note = {Under Review},
-    year = 2025
+    year = 2026
 }
 ```
 ## Overview
