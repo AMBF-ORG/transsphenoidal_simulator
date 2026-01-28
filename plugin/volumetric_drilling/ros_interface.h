@@ -45,19 +45,34 @@
     \author    Andrew Ying
 */
 //==============================================================================
-#ifndef COLLISION_PUBLISHER_H
-#define COLLISION_PUBLISHER_H
+#ifndef ROS_INTERFACE_H
+#define ROS_INTERFACE_H
 
-#include "ros/ros.h"
 #include <string>
+#include <afFramework.h>
+#include <ambf_server/ambf_ral_config.h>
+#include <ambf_server/RosComBase.h>
+#include <vector>
+
+#if AMBF_ROS1
+#include <ros/ros.h>
+#include <geometry_msgs/WrenchStamped.h>
+#include <std_msgs/ColorRGBA.h>
 #include <volumetric_drilling_msgs/Voxels.h>
 #include <volumetric_drilling_msgs/DrillSize.h>
 #include <volumetric_drilling_msgs/VolumeInfo.h>
-#include <geometry_msgs/WrenchStamped.h>
-#include <std_msgs/ColorRGBA.h>
 
-#include <afFramework.h>
+#elif AMBF_ROS2
+#include <ambf_server/ambf_ral.h>
+#include <rclcpp/rclcpp.hpp>
+#include "volumetric_drilling_msgs/msg/voxels.hpp"
+#include "volumetric_drilling_msgs/msg/drill_size.hpp"
+#include "volumetric_drilling_msgs/msg/volume_info.hpp"
+#include "geometry_msgs/msg/wrench_stamped.hpp"
+#include "std_msgs/msg/color_rgba.hpp"
+#endif
 
+using namespace std;
 using namespace chai3d;
 
 class ToolPublisher{
@@ -72,11 +87,12 @@ public:
 
     void publishClampedForceFeedback(cVector3d& force, cVector3d& moment, double time);
 
+    ambf_ral::node_ptr_t m_rosNode;
 
-    ros::NodeHandle* m_rosNode;
     std::string m_frame_id;
 
 protected:
+    #if AMBF_ROS1
     ros::Publisher m_forcefeedbackPub;
     ros::Publisher m_rbforcefeedbackPub;
     ros::Publisher m_clampedforcefeedbackPub;
@@ -84,34 +100,70 @@ protected:
     geometry_msgs::WrenchStamped m_force_feedback_msg;
     geometry_msgs::WrenchStamped m_rbforce_feedback_msg;
     geometry_msgs::WrenchStamped m_clampedforce_feedback_msg;
+    
+    #elif AMBF_ROS2
+    rclcpp::Publisher<geometry_msgs::msg::WrenchStamped>::SharedPtr m_clampedforcefeedbackPub;
+    rclcpp::Publisher<geometry_msgs::msg::WrenchStamped>::SharedPtr m_rbforcefeedbackPub;
+    rclcpp::Publisher<geometry_msgs::msg::WrenchStamped>::SharedPtr m_forcefeedbackPub;
 
+    geometry_msgs::msg::WrenchStamped m_force_feedback_msg;
+    geometry_msgs::msg::WrenchStamped m_rbforce_feedback_msg;
+    geometry_msgs::msg::WrenchStamped m_clampedforce_feedback_msg;  
+    #endif
 };
+
 
 class DrillingPublisher: public ToolPublisher{
 public:
-    DrillingPublisher(std::string a_namespace, std::string a_plugin, std::string frame_id);
+    DrillingPublisher(std::string a_namespace, std::string a_plugin);
     ~DrillingPublisher();
-    void init(std::string a_namespace, std::string a_plugin, std::string frame_id);
+    void init(std::string a_namespace, std::string a_plugin);
+    
     void publishDrillSize(int burrSize, double time);
-
+    
     void setVolumeInfo(cTransform& pose, cVector3d& dimensions, cVector3d& voxel_count);
-
+    
     void publishVolumeInfo(double time);
-
+    
     void appendToVoxelMsg(cVector3d& index, cColorf& color);
-
+    
     void clearVoxelMsg();
-
+    
     void publishVoxelMsg(double time);
-
+        
+    void voxelsCallback(AMBF_RAL_MSG_PTR(volumetric_drilling_msgs, Index) msg);
+    bool getRemoveVoxelsIdx(double* vector);
+    
+    ambf_ral::node_ptr_t m_rosNode;
+    
 private:
+    #if AMBF_ROS1
     ros::Publisher m_voxelsRemovalPub;
     ros::Publisher m_drillSizePub;
     ros::Publisher m_volumeInfoPub;
+    ros::Publisher m_forcefeedbackPub;
+    ros::Subscriber m_removeVoxelsSub;
 
     volumetric_drilling_msgs::Voxels m_voxel_msg;
     volumetric_drilling_msgs::DrillSize m_drill_size_msg;
     volumetric_drilling_msgs::VolumeInfo m_volume_info_msg;
+    geometry_msgs::WrenchStamped m_force_feedback_msg;
+
+    #elif AMBF_ROS2
+    rclcpp::Publisher<volumetric_drilling_msgs::msg::Voxels>::SharedPtr m_voxelsRemovalPub;
+    rclcpp::Publisher<volumetric_drilling_msgs::msg::DrillSize>::SharedPtr m_drillSizePub;
+    rclcpp::Publisher<volumetric_drilling_msgs::msg::VolumeInfo>::SharedPtr m_volumeInfoPub;
+    rclcpp::Subscription<volumetric_drilling_msgs::msg::Index>::SharedPtr m_removeVoxelsSub;
+    
+    volumetric_drilling_msgs::msg::Voxels m_voxel_msg;
+    volumetric_drilling_msgs::msg::DrillSize m_drill_size_msg;
+    volumetric_drilling_msgs::msg::VolumeInfo m_volume_info_msg;
+    geometry_msgs::msg::WrenchStamped m_force_feedback_msg;
+    
+    #endif
+
+    double m_voxelRemoving_idx[3];
+    bool m_removingVoxel = false;
 };
 
 #endif //VOLUMETRIC_PLUGIN_COLLISION_PUBLISHER_H

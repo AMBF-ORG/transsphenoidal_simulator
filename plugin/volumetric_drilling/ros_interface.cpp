@@ -55,23 +55,31 @@ ToolPublisher::ToolPublisher(string a_namespace, string a_plugin, string frame_i
 }
 
 ToolPublisher::~ToolPublisher(){
+    #if AMBF_ROS1
     m_forcefeedbackPub.shutdown();
     m_rbforcefeedbackPub.shutdown();
     m_clampedforcefeedbackPub.shutdown();
+    #if AMBF_ROS2
+    m_forcefeedbackPub.reset();
+    m_rbforcefeedbackPub.reset();
+    m_clampedforcefeedbackPub.reset();
+    #endif
 }
 
 void ToolPublisher::init(string a_namespace, string a_plugin, string frame_id){
-    m_rosNode = afROSNode::getNode();
-    m_forcefeedbackPub = m_rosNode->advertise<geometry_msgs::WrenchStamped>(a_namespace + "/" + a_plugin + "/drill_force_feedback", 1, true);
-    m_rbforcefeedbackPub = m_rosNode->advertise<geometry_msgs::WrenchStamped>(a_namespace + "/" + a_plugin + "/drill_rbforce_feedback", 1, true);
-    m_clampedforcefeedbackPub = m_rosNode->advertise<geometry_msgs::WrenchStamped>(a_namespace + "/" + a_plugin + "/drill_clampedforce_feedback", 1, true);
+    m_rosNode = afROSNode::getNodeAndRegister(a_namespace);
 
+    ambf_ral::create_publisher<AMBF_RAL_MSG(geometry_msgs, WrenchStamped)>
+      (m_forcefeedbackPub, m_rosNode, a_namespace + "/" + a_plugin + "/drill_force_feedback", 1, false);
+    ambf_ral::create_publisher<AMBF_RAL_MSG(geometry_msgs, WrenchStamped)>
+      (m_rbforcefeedbackPub, m_rosNode, a_namespace + "/" + a_plugin + "/drill_rbforce_feedback", 1, false);
+    ambf_ral::create_publisher<AMBF_RAL_MSG(geometry_msgs, WrenchStamped)>
+      (m_clampedforcefeedbackPub, m_rosNode, a_namespace + "/" + a_plugin + "/drill_clampedforce_feedback", 1, false);
     m_frame_id = frame_id;
 }
 
 void ToolPublisher::publishForceFeedback(cVector3d& force, cVector3d& moment, double time)
 {
-    m_force_feedback_msg.header.stamp.fromSec(time);
     m_force_feedback_msg.header.frame_id = m_frame_id;
     m_force_feedback_msg.wrench.force.x = force.x();
     m_force_feedback_msg.wrench.force.y = force.y();
@@ -81,27 +89,43 @@ void ToolPublisher::publishForceFeedback(cVector3d& force, cVector3d& moment, do
     m_force_feedback_msg.wrench.torque.y = moment.y();
     m_force_feedback_msg.wrench.torque.z = moment.z();
 
-    m_forcefeedbackPub.publish(m_force_feedback_msg);
+    #if AMBF_ROS1
+        m_force_feedback_msg.header.stamp.fromSec(time);
+        m_forcefeedbackPub.publish(m_force_feedback_msg);
+    #elif AMBF_ROS2
+        int32_t sec  = static_cast<int32_t>(time);
+        uint32_t nsec = static_cast<uint32_t>((time - sec) * 1e9);
+        m_force_feedback_msg.header.stamp.sec = sec;
+        m_force_feedback_msg.header.stamp.nanosec = nsec;
+        m_forcefeedbackPub->publish(m_force_feedback_msg);
+    #endif
 }
 
 void ToolPublisher::publishRBForceFeedback(cVector3d& force, cVector3d& moment, double time)
 {
-    m_rbforce_feedback_msg.header.stamp.fromSec(time);
     m_rbforce_feedback_msg.header.frame_id = m_frame_id;
     m_rbforce_feedback_msg.wrench.force.x = force.x();
     m_rbforce_feedback_msg.wrench.force.y = force.y();
     m_rbforce_feedback_msg.wrench.force.z = force.z();
-
+    
     m_rbforce_feedback_msg.wrench.torque.x = moment.x();
     m_rbforce_feedback_msg.wrench.torque.y = moment.y();
     m_rbforce_feedback_msg.wrench.torque.z = moment.z();
 
-    m_rbforcefeedbackPub.publish(m_rbforce_feedback_msg);
+    #if AMBF_ROS1
+        m_rbforce_feedback_msg.header.stamp.fromSec(time);
+        m_rbforcefeedbackPub.publish(m_rbforce_feedback_msg);
+    #elif AMBF_ROS2
+        int32_t sec  = static_cast<int32_t>(time);
+        uint32_t nsec = static_cast<uint32_t>((time - sec) * 1e9);
+        m_force_feedback_msg.header.stamp.sec = sec;
+        m_rbforce_feedback_msg.header.stamp.nanosec = nsec;
+        m_rbforcefeedbackPub->publish(m_rbforce_feedback_msg);
+    #endif
 }
 
 void ToolPublisher::publishClampedForceFeedback(cVector3d& force, cVector3d& moment, double time)
 {
-    m_clampedforce_feedback_msg.header.stamp.fromSec(time);
     m_clampedforce_feedback_msg.header.frame_id = m_frame_id;
     m_clampedforce_feedback_msg.wrench.force.x = force.x();
     m_clampedforce_feedback_msg.wrench.force.y = force.y();
@@ -111,32 +135,83 @@ void ToolPublisher::publishClampedForceFeedback(cVector3d& force, cVector3d& mom
     m_clampedforce_feedback_msg.wrench.torque.y = moment.y();
     m_clampedforce_feedback_msg.wrench.torque.z = moment.z();
 
+    #if AMBF_ROS1
+        m_clampedforce_feedback_msg.header.stamp.fromSec(time);
+        m_clampedforcefeedbackPub.publish(m_clampedforce_feedback_msg);
+    #elif AMBF_ROS2
+        int32_t sec  = static_cast<int32_t>(time);
+        uint32_t nsec = static_cast<uint32_t>((time - sec) * 1e9);
+        m_clampedforce_feedback_msg.header.stamp.sec = sec;
+        m_clampedforce_feedback_msg.header.stamp.nanosec = nsec;
+        m_clampedforcefeedbackPub->publish(m_clampedforce_feedback_msg);
+    #endif
     m_clampedforcefeedbackPub.publish(m_clampedforce_feedback_msg);
 }
 
 
-DrillingPublisher::DrillingPublisher(string a_namespace, string a_plugin, string frame_id) : ToolPublisher(a_namespace, a_plugin, frame_id){
-    init(a_namespace, a_plugin, frame_id);
+DrillingPublisher::DrillingPublisher(string a_namespace, string a_plugin){
+    init(a_namespace, a_plugin);
 }
 
 DrillingPublisher::~DrillingPublisher(){
-    m_voxelsRemovalPub.shutdown();
-    m_drillSizePub.shutdown();
-    m_volumeInfoPub.shutdown();
+    #if AMBF_ROS1
+        m_voxelsRemovalPub.shutdown();
+        m_drillSizePub.shutdown();
+        m_volumeInfoPub.shutdown();
+    #elif AMBF_ROS2
+        m_voxelsRemovalPub.reset();
+        m_drillSizePub.reset();
+        m_volumeInfoPub.reset();
+    #endif
 }
 
-void DrillingPublisher::init(string a_namespace, string a_plugin, string frame_id){
+void DrillingPublisher::init(string a_namespace, string a_plugin){
     ToolPublisher::init(a_namespace, a_plugin, frame_id);
-    m_voxelsRemovalPub = m_rosNode->advertise<volumetric_drilling_msgs::Voxels>(a_namespace + "/" + a_plugin + "/voxels_removed", 1);
-    m_drillSizePub = m_rosNode->advertise<volumetric_drilling_msgs::DrillSize>(a_namespace + "/" + a_plugin + "/drill_size", 1, true);
-    m_volumeInfoPub = m_rosNode->advertise<volumetric_drilling_msgs::VolumeInfo>(a_namespace + "/" + a_plugin + "/volume_info", 1, true);
+    ambf_ral::create_publisher<AMBF_RAL_MSG(volumetric_drilling_msgs, Voxels)>
+      (m_voxelsRemovalPub, m_rosNode, a_namespace + "/" + a_plugin + "/voxels_removed", 1, false);
+    ambf_ral::create_publisher<AMBF_RAL_MSG(volumetric_drilling_msgs, DrillSize)>
+      (m_drillSizePub, m_rosNode, a_namespace + "/" + a_plugin + "/drill_size", 1, true);
+    ambf_ral::create_publisher<AMBF_RAL_MSG(volumetric_drilling_msgs, VolumeInfo)>
+      (m_volumeInfoPub, m_rosNode, a_namespace + "/" + a_plugin + "/volume_info", 1, true);
+    ambf_ral::create_subscriber<AMBF_RAL_MSG(volumetric_drilling_msgs, Index), DrillingPublisher>
+      (m_removeVoxelsSub, m_rosNode, a_namespace + "/" + a_plugin + "/remove_voxels", 1, &DrillingPublisher::voxelsCallback, this);
 }
+
+void DrillingPublisher::voxelsCallback(AMBF_RAL_MSG_PTR(volumetric_drilling_msgs, Index) msg){
+    m_voxelRemoving_idx[0] = msg->x;
+    m_voxelRemoving_idx[1] = msg->y;
+    m_voxelRemoving_idx[2] = msg->z;
+    m_removingVoxel = true;
+}
+
+
+bool DrillingPublisher::getRemoveVoxelsIdx(double* vector){
+    if (m_removingVoxel){
+        vector[0] = m_voxelRemoving_idx[0];
+        vector[1] = m_voxelRemoving_idx[1];
+        vector[2] = m_voxelRemoving_idx[2];
+        m_removingVoxel = false;
+        return true;
+    }
+
+    else{
+        return false;
+    }
+}
+
 
 void DrillingPublisher::publishDrillSize(int burrSize, double time){
-    m_drill_size_msg.header.stamp.fromSec(time);
     m_drill_size_msg.size.data = burrSize;
-
-    m_drillSizePub.publish(m_drill_size_msg);
+    #if AMBF_ROS1
+        m_drill_size_msg.header.stamp.fromSec(time);
+        m_drillSizePub.publish(m_drill_size_msg);
+    #elif AMBF_ROS2
+        int32_t sec  = static_cast<int32_t>(time);
+        uint32_t nsec = static_cast<uint32_t>((time - sec) * 1e9);
+        m_drill_size_msg.header.stamp.sec = sec;
+        m_drill_size_msg.header.stamp.nanosec = nsec;
+        m_drillSizePub->publish(m_drill_size_msg);
+    #endif
 }
 
 void DrillingPublisher::setVolumeInfo(cTransform &pose, cVector3d& dimensions, cVector3d& voxel_count)
@@ -167,16 +242,30 @@ void DrillingPublisher::setVolumeInfo(cTransform &pose, cVector3d& dimensions, c
 
 void DrillingPublisher::publishVolumeInfo(double time)
 {
-    m_volume_info_msg.header.stamp.fromSec(time);
-    m_volumeInfoPub.publish(m_volume_info_msg);
+    #if AMBF_ROS1
+        m_volume_info_msg.header.stamp.fromSec(time);   
+        m_volumeInfoPub.publish(m_volume_info_msg);
+    #elif AMBF_ROS2
+        int32_t sec  = static_cast<int32_t>(time);
+        uint32_t nsec = static_cast<uint32_t>((time - sec) * 1e9);
+        m_volume_info_msg.header.stamp.sec = sec;
+        m_volume_info_msg.header.stamp.nanosec = nsec;
+        m_volumeInfoPub->publish(m_volume_info_msg);
+    #endif
 }
 
 void DrillingPublisher::appendToVoxelMsg(cVector3d &index, cColorf &color)
-{
+{   
+    #if AMBF_ROS1
     volumetric_drilling_msgs::Index idx;
+    std_msgs::ColorRGBA col; 
+    #elif AMBF_ROS2
+    volumetric_drilling_msgs::msg::Index idx;
+    std_msgs::msg::ColorRGBA col; 
+    #endif
+
     idx.x = index.x(); idx.y = index.y(); idx.z = index.z();
     m_voxel_msg.indices.push_back(idx);
-    std_msgs::ColorRGBA col;
     col.r = color.getR(); col.g = color.getG(); col.b = color.getB(); col.a = color.getA();
     m_voxel_msg.colors.push_back(col);
 }
@@ -189,7 +278,15 @@ void DrillingPublisher::clearVoxelMsg()
 }
 
 void DrillingPublisher::publishVoxelMsg(double time)
-{
-    m_voxel_msg.header.stamp.fromSec(time);
-    m_voxelsRemovalPub.publish(m_voxel_msg);
+{    
+    #if AMBF_ROS1
+        m_voxel_msg.header.stamp.fromSec(time);
+        m_voxelsRemovalPub.publish(m_voxel_msg);
+    #elif AMBF_ROS2
+        int32_t sec  = static_cast<int32_t>(time);
+        uint32_t nsec = static_cast<uint32_t>((time - sec) * 1e9);
+        m_voxel_msg.header.stamp.sec = sec;
+        m_voxel_msg.header.stamp.nanosec = nsec;
+        m_voxelsRemovalPub->publish(m_voxel_msg);
+    #endif
 }

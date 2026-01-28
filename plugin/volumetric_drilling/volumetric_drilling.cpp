@@ -231,24 +231,38 @@ int afVolmetricDrillingPlugin::init(int argc, char **argv, const afWorldPtr a_af
 
     m_gazeMarkerController.init(m_worldPtr, &m_panelManager, var_map);
 
-    m_rosNode = afROSNode::getNode();
-    m_mtmlFreePub = m_rosNode->advertise<std_msgs::Empty>("/MTML/free", 1);
-    m_mtmlHoldPub = m_rosNode->advertise<std_msgs::Empty>("/MTML/hold", 1);
-    m_mtmrFreePub = m_rosNode->advertise<std_msgs::Empty>("/MTMR/free", 1);
-    m_mtmrHoldPub = m_rosNode->advertise<std_msgs::Empty>("/MTMR/hold", 1);
-    m_mtmlsetForceabs = m_rosNode->advertise<std_msgs::Bool>("/MTML/body/set_cf_orientation_absolute", 1);
-    m_mtmrsetForceabs = m_rosNode->advertise<std_msgs::Bool>("/MTMR/body/set_cf_orientation_absolute", 1);
+    m_rosNode = afROSNode::getNodeAndRegister(a_namespace);
+    ambf_ral::create_publisher<AMBF_RAL_MSG(std_msgs, Empty)>(m_mtmlFreePub, m_rosNode, "/MTML/free", 1, false);
+    ambf_ral::create_publisher<AMBF_RAL_MSG(std_msgs, Empty)>(m_mtmlHoldPub, m_rosNode, "/MTML/hold", 1, false);
+    ambf_ral::create_publisher<AMBF_RAL_MSG(std_msgs, Empty)>(m_mtmrFreePub, m_rosNode, "/MTMR/free", 1, false);
+    ambf_ral::create_publisher<AMBF_RAL_MSG(std_msgs, Empty)>(m_mtmrHoldPub, m_rosNode, "/MTMR/hold", 1, false);
+    ambf_ral::create_publisher<AMBF_RAL_MSG(std_msgs, Bool)>(m_mtmlsetForceabs, m_rosNode, "/MTML/body/set_cf_orientation_absolute", 1, false);
+    ambf_ral::create_publisher<AMBF_RAL_MSG(std_msgs, Bool)>(m_mtmrsetForceabs, m_rosNode, "/MTMR/body/set_cf_orientation_absolute", 1, false);
 
     // Set_cf_orientation_absolute
+    #if AMBF_ROS1
     std_msgs::Bool bool_msg;
     bool_msg.data = true;
     m_mtmlsetForceabs.publish(bool_msg);
     m_mtmrsetForceabs.publish(bool_msg);
+    #if AMBF_ROS2
+    std_msgs::msg::Bool bool_msg;
+    bool_msg.data = true;
+    m_mtmlsetForceabs->publish(bool_msg);
+    m_mtmrsetForceabs->publish(bool_msg);
+    #endif
     
     // Hold robot first
+    #if AMBF_ROS1
     std_msgs::Empty empty_msg;
     m_mtmlHoldPub.publish(empty_msg);
     m_mtmrHoldPub.publish(empty_msg);
+
+    #if AMBF_ROS2
+    std_msgs::msg::Empty empty_msg;
+    m_mtmlHoldPub->publish(empty_msg);
+    m_mtmrHoldPub->publish(empty_msg);
+    #endif
 
     // m_operatorPresentSub = m_rosNode->subscribe("/console/operator_present", 1, &afVolmetricDrillingPlugin::operatorPresentCallback, this);
     m_operatorPresentSub = m_rosNode->subscribe("/console/operator_present", 1, &afVolmetricDrillingPlugin::operatorPresentCallback, this);
@@ -263,7 +277,7 @@ int afVolmetricDrillingPlugin::init(int argc, char **argv, const afWorldPtr a_af
     return 1;
 }
 
-void afVolmetricDrillingPlugin::operatorPresentCallback(const sensor_msgs::JoyConstPtr &msg){
+void afVolmetricDrillingPlugin::operatorPresentCallback(AMBF_RAL_MSG_PTR(sensor_msgs, Joy) msg){
     // make sure the button index exists
     if (msg->buttons.size() <= 0){
         cerr << "no buttons on operator present pedal" << endl;
@@ -355,6 +369,9 @@ void afVolmetricDrillingPlugin::graphicsUpdate(){
 
 void afVolmetricDrillingPlugin::physicsUpdate(double dt){
     m_worldPtr->getChaiWorld()->computeGlobalPositions(true);
+
+    // Need to spin for the subscriber
+    ambf_ral::spin_some(m_rosNode);
 
     // Coefficient
     double const volumeBasedForceConst = 0.5;
@@ -523,11 +540,9 @@ void afVolmetricDrillingPlugin::physicsUpdate(double dt){
     // send forces to haptic device
     if (m_endoManager.getOverrideControl() == false){
         if (m_operatorPresent > 0){ 
-            m_endoManager.m_burrCursor->applyToDevice();
-            
+            m_endoManager.m_burrCursor->applyToDevice();       
         }
     }
-
 }
 
 

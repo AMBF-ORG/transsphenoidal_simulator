@@ -46,10 +46,11 @@
 //==============================================================================
 
 // To silence warnings on MacOS
-#include "ros/subscriber.h"
 #define GL_SILENCE_DEPRECATION
 #include "endo_manager.h"
 #include <afFramework.h>
+#include <ambf_server/ambf_ral_config.h>
+#include <ambf_server/RosComBase.h>
 #include "footpedal.h"
 #include "camera_panel_manager.h"
 #include "wave_generator.h"
@@ -59,6 +60,22 @@
 using namespace std;
 using namespace ambf;
 
+#if AMBF_ROS1
+#include <ros/ros.h>
+#include <std_msgs/ColorRGBA.h>
+#include <volumetric_drilling_msgs/Voxels.h>
+#include <volumetric_drilling_msgs/DrillSize.h>
+#include <volumetric_drilling_msgs/VolumeInfo.h>
+
+#elif AMBF_ROS2
+#include <ambf_server/ambf_ral.h>
+#include <rclcpp/rclcpp.hpp>
+#include "volumetric_drilling_msgs/msg/voxels.hpp"
+#include "volumetric_drilling_msgs/msg/drill_size.hpp"
+#include "volumetric_drilling_msgs/msg/volume_info.hpp"
+#include "std_msgs/msg/color_rgba.hpp"
+
+#endif
 
 class afVolmetricDrillingPlugin: public afSimulatorPlugin{
 public:
@@ -148,8 +165,9 @@ private:
 
     CameraPanelManager m_panelManager;
 
-    ros::NodeHandle* m_rosNode;
-
+    ambf_ral::node_ptr_t m_rosNode;
+    
+    #if AMBF_ROS1
     ros::Publisher m_mtmlFreePub;
     ros::Publisher m_mtmlHoldPub;
     ros::Publisher m_mtmrFreePub;
@@ -158,13 +176,24 @@ private:
     ros::Publisher m_mtmrsetForceabs;
 
     ros::Subscriber m_operatorPresentSub;
+
+    #elif AMBF_ROS2
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_mtmlFreePub;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_mtmlHoldPub;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_mtmrFreePub;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_mtmrHoldPub;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_mtmlsetForceabs;
+    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_mtmrsetForceabs;
+    rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr m_operatorPresentSub;
+    #endif
+
     bool m_operatorPresent;
 
     bool m_init_pos_reached = false;
     bool m_endo_control = false;
 
 
-    void operatorPresentCallback(const sensor_msgs::JoyConstPtr &msg);
+    void operatorPresentCallback(AMBF_RAL_MSG_PTR(sensor_msgs,Joy) msg);
     bool checkInitPosReached();
 };
 
