@@ -24,14 +24,16 @@ The simulator builds upon the FIVRS bone drilling simulator (https://github.com/
 
 
 ## 1. Installation Instructions:
-### 1.1 Install and Source AMBF 2.0
+### 1.1 Install and Source AMBF 3.0
 
-Clone and build `ambf-2.0` branch.
+Clone and build `ambf-3.0` branch.
 ```bash
-git clone git@github.com:hisashiishida/ambf.git
-cd ambf
-git checkout -b ambf-2.0 origin/ambf-2.0
-git pull
+cd ~
+mkdir -p ros_ambf_ws/src && cd ros_ambf_ws/src
+git clone https://github.com/WPI-AIM/ambf.git
+source /opt/ros/<version>/setup.bash
+cd ~/ros_ambf_ws
+colcon build
 ```
 
 **⚠️ Important:** Be sure to clone the fork, which has some important changes for use with the dVRK MTMs.
@@ -47,12 +49,10 @@ Build and source ambf (make sure you're on branch ambf-2.0 before building) as p
 
 ### 1.2 Clone and Build Simulator
 ``` bash
+cd ~/ros_ambf_ws/src
 git clone git@github.com:AMBF-ORG/transsphenoidal_simulator.git
-cd transsphenoidal_simulator
-mkdir build
-cd build
-cmake ..
-make
+cd ~/ros_ambf_ws
+colcon build
 ```
 
 ### 1.3 Clone and Build Camera Distortion Plugin
@@ -62,7 +62,7 @@ Note that `transsphenoidal_simulator/plugin_config/ambf_camera_distortion_plugin
 
 **⚠️ Important:** We also need to create a symlink to the plugin:
 ``` bash
-cd ~/volumetric_drilling/plugin
+cd ~/ros_ambf_ws/src/transsphenoidal_simulator/plugin
 ln -s ~/ambf_camera_distortion_plugin
 ```
 Note this symlink has a habit of breaking after Git operations and may need to be relinked.

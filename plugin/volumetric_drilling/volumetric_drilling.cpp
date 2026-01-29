@@ -58,8 +58,6 @@
 #include <boost/program_options.hpp>
 #include <ambf_server/RosComBase.h>
 #include <boost/program_options/value_semantic.hpp>
-#include <sensor_msgs/Joy.h>
-#include <std_msgs/Empty.h>
 #include <utility>
 
 using namespace std;
@@ -153,10 +151,12 @@ int afVolmetricDrillingPlugin::init(int argc, char **argv, const afWorldPtr a_af
     }
 
     if (!m_drillManager.init(a_afWorld, &m_panelManager, var_map)){
+        cerr << "ERROR! FAILED TO INITIALIZE DRILL MANAGER" << endl;
         return -1;
     }
 
     if (!m_endoManager.init(a_afWorld, &m_panelManager, var_map)){
+        cerr << "ERROR! FAILED TO INITIALIZE ENDO MANAGER" << endl;
         return -1;
     }
 
@@ -171,6 +171,8 @@ int afVolmetricDrillingPlugin::init(int argc, char **argv, const afWorldPtr a_af
             return -1;
         }
     }
+
+    cerr << "INFO! FOUND VOLUME NAMED: " << m_volumeObject->getName() << endl;
     // no else, because then the fallback won't work
     // else{
         m_voxelObj = m_volumeObject->getInternalVolume();
@@ -231,7 +233,7 @@ int afVolmetricDrillingPlugin::init(int argc, char **argv, const afWorldPtr a_af
 
     m_gazeMarkerController.init(m_worldPtr, &m_panelManager, var_map);
 
-    m_rosNode = afROSNode::getNodeAndRegister(a_namespace);
+    m_rosNode = afROSNode::getNodeAndRegister(m_worldPtr->getNamespace());
     ambf_ral::create_publisher<AMBF_RAL_MSG(std_msgs, Empty)>(m_mtmlFreePub, m_rosNode, "/MTML/free", 1, false);
     ambf_ral::create_publisher<AMBF_RAL_MSG(std_msgs, Empty)>(m_mtmlHoldPub, m_rosNode, "/MTML/hold", 1, false);
     ambf_ral::create_publisher<AMBF_RAL_MSG(std_msgs, Empty)>(m_mtmrFreePub, m_rosNode, "/MTMR/free", 1, false);
@@ -245,7 +247,7 @@ int afVolmetricDrillingPlugin::init(int argc, char **argv, const afWorldPtr a_af
     bool_msg.data = true;
     m_mtmlsetForceabs.publish(bool_msg);
     m_mtmrsetForceabs.publish(bool_msg);
-    #if AMBF_ROS2
+    #elif AMBF_ROS2
     std_msgs::msg::Bool bool_msg;
     bool_msg.data = true;
     m_mtmlsetForceabs->publish(bool_msg);
@@ -258,14 +260,14 @@ int afVolmetricDrillingPlugin::init(int argc, char **argv, const afWorldPtr a_af
     m_mtmlHoldPub.publish(empty_msg);
     m_mtmrHoldPub.publish(empty_msg);
 
-    #if AMBF_ROS2
+    #elif AMBF_ROS2
     std_msgs::msg::Empty empty_msg;
     m_mtmlHoldPub->publish(empty_msg);
     m_mtmrHoldPub->publish(empty_msg);
     #endif
 
     // m_operatorPresentSub = m_rosNode->subscribe("/console/operator_present", 1, &afVolmetricDrillingPlugin::operatorPresentCallback, this);
-    m_operatorPresentSub = m_rosNode->subscribe("/console/operator_present", 1, &afVolmetricDrillingPlugin::operatorPresentCallback, this);
+    // m_operatorPresentSub = m_rosNode->subscribe("/console/operator_present", 1, &afVolmetricDrillingPlugin::operatorPresentCallback, this);
 
     m_operatorPresent = false;
 
@@ -287,6 +289,7 @@ void afVolmetricDrillingPlugin::operatorPresentCallback(AMBF_RAL_MSG_PTR(sensor_
     int btn = msg->buttons[0];
     if (btn == 1 && checkInitPosReached()){
         m_operatorPresent = !m_operatorPresent;
+        #if AMBF_ROS1
         std_msgs::Empty empty_msg;
 
         if (m_operatorPresent){
@@ -299,6 +302,20 @@ void afVolmetricDrillingPlugin::operatorPresentCallback(AMBF_RAL_MSG_PTR(sensor_
             m_mtmrHoldPub.publish(empty_msg);
             cerr << "operator absent: hold MTMs" << endl;
         }
+
+        #elif AMBF_ROS2
+        std_msgs::msg::Empty empty_msg;
+        if (m_operatorPresent){
+            m_mtmlFreePub->publish(empty_msg);
+            m_mtmrFreePub->publish(empty_msg);
+            cerr << "operator present: free MTMs" << endl;
+        }
+        else {
+            m_mtmlHoldPub->publish(empty_msg);
+            m_mtmrHoldPub->publish(empty_msg);
+            cerr << "operator absent: hold MTMs" << endl;
+        }
+        #endif
     }
 
 }
@@ -845,16 +862,30 @@ void afVolmetricDrillingPlugin::keyboardUpdate(GLFWwindow *a_window, int a_key, 
         }
         else if (a_key == GLFW_KEY_F){
             m_operatorPresent = true;
+            #if AMBF_ROS1
             std_msgs::Empty empty_msg;
             m_mtmlFreePub.publish(empty_msg);
             m_mtmrFreePub.publish(empty_msg);
+
+            #elif AMBF_ROS2
+            std_msgs::msg::Empty empty_msg;
+            m_mtmlFreePub->publish(empty_msg);
+            m_mtmrFreePub->publish(empty_msg);
+            #endif
             cerr << "Free MTMs" << endl;
         }
         else if (a_key == GLFW_KEY_H){
             m_operatorPresent = false;
+            #if AMBF_ROS1
             std_msgs::Empty empty_msg;
             m_mtmlHoldPub.publish(empty_msg);
             m_mtmrHoldPub.publish(empty_msg);
+
+            #elif AMBF_ROS2
+            std_msgs::msg::Empty empty_msg;
+            m_mtmlHoldPub->publish(empty_msg);
+            m_mtmrHoldPub->publish(empty_msg);
+            #endif
             cerr << "Hold MTMs" << endl;
         }
 
@@ -1176,12 +1207,21 @@ void afVolmetricDrillingPlugin::reset(){
 }
 
 bool afVolmetricDrillingPlugin::close()
-{
+{   
+    #if AMBF_ROS1
     std_msgs::Empty empty_msg;
     m_mtmlHoldPub.publish(empty_msg);
     m_mtmrHoldPub.publish(empty_msg);
+    m_rosNode->shutdown();
+
+    #elif AMBF_ROS2
+    std_msgs::msg::Empty empty_msg;
+    m_mtmlHoldPub->publish(empty_msg);
+    m_mtmrHoldPub->publish(empty_msg);
+    rclcpp::shutdown();
+    #endif
+    
     m_drillManager.cleanup();
     m_endoManager.cleanup();
-    m_rosNode->shutdown();
     return true;
 }

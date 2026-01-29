@@ -58,6 +58,7 @@
 #include <ros/ros.h>
 #include <geometry_msgs/WrenchStamped.h>
 #include <std_msgs/ColorRGBA.h>
+#include <std_msgs/Bool.h>
 #include <volumetric_drilling_msgs/Voxels.h>
 #include <volumetric_drilling_msgs/DrillSize.h>
 #include <volumetric_drilling_msgs/VolumeInfo.h>
@@ -70,6 +71,7 @@
 #include "volumetric_drilling_msgs/msg/volume_info.hpp"
 #include "geometry_msgs/msg/wrench_stamped.hpp"
 #include "std_msgs/msg/color_rgba.hpp"
+#include "std_msgs/msg/bool.hpp"
 #endif
 
 using namespace std;
@@ -115,9 +117,9 @@ protected:
 
 class DrillingPublisher: public ToolPublisher{
 public:
-    DrillingPublisher(std::string a_namespace, std::string a_plugin);
+    DrillingPublisher(std::string a_namespace, std::string a_plugin, std::string frame_id);
     ~DrillingPublisher();
-    void init(std::string a_namespace, std::string a_plugin);
+    void init(std::string a_namespace, std::string a_plugin, std::string frame_id);
     
     void publishDrillSize(int burrSize, double time);
     
@@ -132,10 +134,9 @@ public:
     void publishVoxelMsg(double time);
         
     void voxelsCallback(AMBF_RAL_MSG_PTR(volumetric_drilling_msgs, Index) msg);
+
     bool getRemoveVoxelsIdx(double* vector);
-    
-    ambf_ral::node_ptr_t m_rosNode;
-    
+        
 private:
     #if AMBF_ROS1
     ros::Publisher m_voxelsRemovalPub;

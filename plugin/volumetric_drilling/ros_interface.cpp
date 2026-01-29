@@ -46,7 +46,6 @@
 */
 //==============================================================================
 #include "ros_interface.h"
-#include <ambf_server/RosComBase.h>
 
 using namespace std;
 
@@ -59,7 +58,7 @@ ToolPublisher::~ToolPublisher(){
     m_forcefeedbackPub.shutdown();
     m_rbforcefeedbackPub.shutdown();
     m_clampedforcefeedbackPub.shutdown();
-    #if AMBF_ROS2
+    #elif AMBF_ROS2
     m_forcefeedbackPub.reset();
     m_rbforcefeedbackPub.reset();
     m_clampedforcefeedbackPub.reset();
@@ -145,12 +144,11 @@ void ToolPublisher::publishClampedForceFeedback(cVector3d& force, cVector3d& mom
         m_clampedforce_feedback_msg.header.stamp.nanosec = nsec;
         m_clampedforcefeedbackPub->publish(m_clampedforce_feedback_msg);
     #endif
-    m_clampedforcefeedbackPub.publish(m_clampedforce_feedback_msg);
 }
 
 
-DrillingPublisher::DrillingPublisher(string a_namespace, string a_plugin){
-    init(a_namespace, a_plugin);
+DrillingPublisher::DrillingPublisher(string a_namespace, string a_plugin, string frame_id): ToolPublisher(a_namespace, a_plugin, frame_id){
+    init(a_namespace, a_plugin, frame_id);
 }
 
 DrillingPublisher::~DrillingPublisher(){
@@ -165,7 +163,7 @@ DrillingPublisher::~DrillingPublisher(){
     #endif
 }
 
-void DrillingPublisher::init(string a_namespace, string a_plugin){
+void DrillingPublisher::init(string a_namespace, string a_plugin, string frame_id){
     ToolPublisher::init(a_namespace, a_plugin, frame_id);
     ambf_ral::create_publisher<AMBF_RAL_MSG(volumetric_drilling_msgs, Voxels)>
       (m_voxelsRemovalPub, m_rosNode, a_namespace + "/" + a_plugin + "/voxels_removed", 1, false);

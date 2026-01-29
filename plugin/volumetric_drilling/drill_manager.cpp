@@ -123,7 +123,7 @@ int DrillManager::init(afWorldPtr a_worldPtr, CameraPanelManager* a_panelManager
     vector<int> voxelRemovalThresholds = {2, 6,12, 20};
 
     for (int i = 0 ; i < drillDiameters.size() ; i++){
-        string drillName = to_string(drillDiameters[i]) + "mm";
+        string drillName = "drill_" + to_string(drillDiameters[i]) + "mm";
         afRigidBodyPtr drillRB = a_worldPtr->getRigidBody(drillName);
         if (drillRB){
             Drill* drill = new Drill();
@@ -211,6 +211,7 @@ int DrillManager::init(afWorldPtr a_worldPtr, CameraPanelManager* a_panelManager
     // create a haptic device handler
     m_deviceHandler = new cHapticDeviceHandler();
 
+    cerr << "INFO! NUMBER OF HAPTIC DEVICES DETECTED: " << m_deviceHandler->getNumDevices() << endl;
     // set to only available device for set up
     if (m_deviceHandler->getNumDevices() < 2) {
         m_deviceHandler->getDevice(m_hapticDevice, 0);
@@ -272,6 +273,8 @@ int DrillManager::init(afWorldPtr a_worldPtr, CameraPanelManager* a_panelManager
 
     m_rbForce.zero();
     m_rbTorque.zero();
+
+    cerr << "SUCCESFULLY INITIALIZED DRILL MANAGER" << endl;
 
     return 1;
 }

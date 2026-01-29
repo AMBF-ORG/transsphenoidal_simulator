@@ -99,6 +99,8 @@ add_library(volumetric_drilling SHARED
     ${vol_plugin_prefix}/wave_generator.h
     ${vol_plugin_prefix}/drill_manager.cpp
     ${vol_plugin_prefix}/drill_manager.h
+    ${vol_plugin_prefix}/endo_manager.cpp
+    ${vol_plugin_prefix}/endo_manager.h
     ${vol_plugin_prefix}/camera_panel_manager.h
     ${vol_plugin_prefix}/camera_panel_manager.cpp
     ${vol_plugin_prefix}/gaze_marker_controller.h

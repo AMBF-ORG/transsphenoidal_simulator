@@ -57,8 +57,6 @@
 #include "gaze_marker_controller.h"
 #include "drill_manager.h"
 
-using namespace std;
-using namespace ambf;
 
 #if AMBF_ROS1
 #include <ros/ros.h>
@@ -66,6 +64,8 @@ using namespace ambf;
 #include <volumetric_drilling_msgs/Voxels.h>
 #include <volumetric_drilling_msgs/DrillSize.h>
 #include <volumetric_drilling_msgs/VolumeInfo.h>
+#include <std_msgs/Empty.h>
+#include <sensor_msgs/Joy.h>
 
 #elif AMBF_ROS2
 #include <ambf_server/ambf_ral.h>
@@ -74,8 +74,14 @@ using namespace ambf;
 #include "volumetric_drilling_msgs/msg/drill_size.hpp"
 #include "volumetric_drilling_msgs/msg/volume_info.hpp"
 #include "std_msgs/msg/color_rgba.hpp"
+#include "std_msgs/msg/empty.hpp"
+#include "sensor_msgs/msg/joy.hpp"
 
 #endif
+
+using namespace std;
+using namespace ambf;
+using namespace chai3d;
 
 class afVolmetricDrillingPlugin: public afSimulatorPlugin{
 public:
@@ -178,10 +184,10 @@ private:
     ros::Subscriber m_operatorPresentSub;
 
     #elif AMBF_ROS2
-    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_mtmlFreePub;
-    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_mtmlHoldPub;
-    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_mtmrFreePub;
-    rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_mtmrHoldPub;
+    rclcpp::Publisher<std_msgs::msg::Empty>::SharedPtr m_mtmlFreePub;
+    rclcpp::Publisher<std_msgs::msg::Empty>::SharedPtr m_mtmlHoldPub;
+    rclcpp::Publisher<std_msgs::msg::Empty>::SharedPtr m_mtmrFreePub;
+    rclcpp::Publisher<std_msgs::msg::Empty>::SharedPtr m_mtmrHoldPub;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_mtmlsetForceabs;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr m_mtmrsetForceabs;
     rclcpp::Subscription<sensor_msgs::msg::Joy>::SharedPtr m_operatorPresentSub;

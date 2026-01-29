@@ -3,10 +3,10 @@
 # Link: https://github.com/WPI-AIM/ambf_addon
 # Generated on: 2025-05-02 14:52:11
 bodies:
-- BODY 1mm
-- BODY 2mm
-- BODY 4mm
-- BODY 6mm
+- BODY drill_1mm
+- BODY drill_2mm
+- BODY drill_4mm
+- BODY drill_6mm
 - BODY mastoidectomy_drill
 joints: []
 sensors: [SENSOR Contact_1mm, SENSOR Contact_2mm, SENSOR Contact_4mm, SENSOR Contact_6mm]
@@ -19,8 +19,8 @@ shaders:
   vertex: shader.vs
   fragment: shader.fs
 
-BODY 1mm:
-  name: 1mm
+BODY drill_1mm:
+  name: drill_1mm
   mesh: 1mm.OBJ
   mass: 10.0
   gravity: {x: 0.0, y: 0.0, z: 0.0}
@@ -88,8 +88,8 @@ BODY 1mm:
       g: 0.25061
       r: 0.26581
     transparency: 1.0
-BODY 2mm:
-  name: 2mm
+BODY drill_2mm:
+  name: drill_2mm
   mesh: 2mm.OBJ
   mass: 10.0
   gravity: {x: 0.0, y: 0.0, z: 0.0}
@@ -157,8 +157,8 @@ BODY 2mm:
       g: 0.25061
       r: 0.26581
     transparency: 1.0
-BODY 4mm:
-  name: 4mm
+BODY drill_4mm:
+  name: drill_4mm
   mesh: 4mm.OBJ
   mass: 10.0
   gravity: {x: 0.0, y: 0.0, z: 0.0}
@@ -231,8 +231,8 @@ BODY 4mm:
     angular: {P: 20, I: 0, D: 1}
   controller output type: velocity
 
-BODY 6mm:
-  name: 6mm
+BODY drill_6mm:
+  name: drill_6mm
   mesh: 6mm.OBJ
   mass: 10.0
   gravity: {x: 0.0, y: 0.0, z: 0.0}
