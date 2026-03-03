@@ -21,7 +21,7 @@ shaders:
 
 BODY drill_1mm:
   name: drill_1mm
-  mesh: 1mm.OBJ
+  mesh: drill_1mm.OBJ
   mass: 10.0
   gravity: {x: 0.0, y: 0.0, z: 0.0}
   inertia:
@@ -90,7 +90,7 @@ BODY drill_1mm:
     transparency: 1.0
 BODY drill_2mm:
   name: drill_2mm
-  mesh: 2mm.OBJ
+  mesh: drill_2mm.OBJ
   mass: 10.0
   gravity: {x: 0.0, y: 0.0, z: 0.0}
   inertia:
@@ -159,7 +159,7 @@ BODY drill_2mm:
     transparency: 1.0
 BODY drill_4mm:
   name: drill_4mm
-  mesh: 4mm.OBJ
+  mesh: drill_4mm.OBJ
   mass: 10.0
   gravity: {x: 0.0, y: 0.0, z: 0.0}
   inertia:

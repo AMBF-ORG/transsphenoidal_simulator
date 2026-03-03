@@ -3,9 +3,9 @@
 # Link: https://github.com/WPI-AIM/ambf_addon
 # Generated on: 2025-05-02 14:52:11
 bodies:
-- BODY drill_1mm
-- BODY drill_2mm
-- BODY drill_4mm
+- BODY 1mm
+- BODY 2mm
+- BODY 4mm
 - BODY 6mm
 - BODY mastoidectomy_drill
 joints: []
@@ -19,8 +19,8 @@ shaders:
   vertex: shader.vs
   fragment: shader.fs
 
-BODY drill_1mm:
-  name: drill_1mm
+BODY 1mm:
+  name: 1mm
   mesh: 1mm.OBJ
   mass: 10.0
   gravity: {x: 0.0, y: 0.0, z: 0.0}
@@ -88,8 +88,8 @@ BODY drill_1mm:
       g: 0.25061
       r: 0.26581
     transparency: 1.0
-BODY drill_2mm:
-  name: drill_2mm
+BODY 2mm:
+  name: 2mm
   mesh: 2mm.OBJ
   mass: 10.0
   gravity: {x: 0.0, y: 0.0, z: 0.0}
@@ -157,8 +157,8 @@ BODY drill_2mm:
       g: 0.25061
       r: 0.26581
     transparency: 1.0
-BODY drill_4mm:
-  name: drill_4mm
+BODY 4mm:
+  name: 4mm
   mesh: 4mm.OBJ
   mass: 10.0
   gravity: {x: 0.0, y: 0.0, z: 0.0}
@@ -338,7 +338,7 @@ BODY mastoidectomy_drill:
 
 SENSOR Contact_1mm:
   name: Contact_1mm
-  parent: BODY drill_1mm
+  parent: BODY 1mm
   type: CONTACT
   distance threshold: 0.000001
   process contact details: true
@@ -348,7 +348,7 @@ SENSOR Contact_1mm:
 
 SENSOR Contact_2mm:
   name: Contact_2mm
-  parent: BODY drill_2mm
+  parent: BODY 2mm
   type: CONTACT
   distance threshold: 0.000001
   process contact details: true
@@ -358,7 +358,7 @@ SENSOR Contact_2mm:
 
 SENSOR Contact_4mm:
   name: Contact_4mm
-  parent: BODY drill_4mm
+  parent: BODY 4mm
   type: CONTACT
   distance threshold: 0.000001
   process contact details: true
