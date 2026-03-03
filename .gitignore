@@ -25,3 +25,8 @@ hdf5_files
 
 .cache/
 plugin/ambf_camera_distortion_plugin
+
+# colcon artifacts
+build/
+install/
+log/
