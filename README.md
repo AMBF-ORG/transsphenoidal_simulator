@@ -56,15 +56,16 @@ colcon build
 ```
 
 ### 1.3 Clone and Build Camera Distortion Plugin
-Follow the instructions here: https://github.com/AMBF-ORG/ambf_camera_distortion_plugin
+Follow the instructions here: https://github.com/AMBF-ORG/ambf_camera_distortion_plugin.
+**⚠️ Important:** Make sure to use 'ros2' branch
 
 Note that `transsphenoidal_simulator/plugin_config/ambf_camera_distortion_plugin/` and `transsphenoidal_simulator/ADF/endoscope_camera.yaml` reference this plugin.
 
-**⚠️ Important:** We also need to create a symlink to the plugin:
+<!-- **⚠️ Important:** We also need to create a symlink to the plugin:
 ``` bash
 cd ~/ros_ambf_ws/src/transsphenoidal_simulator/plugin
 ln -s ~/ambf_camera_distortion_plugin
-```
+``` -->
 Note this symlink has a habit of breaking after Git operations and may need to be relinked.
 
 ## 2 Running the Plugin with ambf_simulator:

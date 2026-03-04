@@ -5,9 +5,9 @@ color config: ADF/color/colors.yaml
 input devices config: ADF/input_devices/input_devices.yaml
 plugins: [
   {
-    name: DRILLING_SIMULATOR,
-    filename: libvolumetric_drilling.so,
-    path: build/
+    name: TRANSSPHENOIDAL_SIMULATOR,
+    filename: libtranssphenoidal_simulator.so,
+    path: build/transsphenoidal_simulator/
   }
 ]
 multibody configs:

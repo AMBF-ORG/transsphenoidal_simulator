@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>volumetric_plugin</name>
+  <name>transsphenoidal_simulator</name>
   <version>0.0.0</version>
-  <description>AMBF plugin for volumetric drilling simulator.</description>
+  <description>AMBF plugin for transsphenoidal_simulator.</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -24,7 +24,7 @@
   <exec_depend condition="$ROS_VERSION == 1">Boost</exec_depend>
   <build_depend condition="$ROS_VERSION == 1">ambf_server</build_depend>
   <build_depend condition="$ROS_VERSION == 1">volumetric_drilling_msgs</build_depend>
-
+W
   <buildtool_depend condition="$ROS_VERSION == 2">ament_cmake</buildtool_depend>
   <depend condition="$ROS_VERSION == 2">rclcpp</depend>
   <depend condition="$ROS_VERSION == 2">volumetric_drilling_msgs</depend>

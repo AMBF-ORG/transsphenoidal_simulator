@@ -1,3 +1,5 @@
+#version 120
+
 uniform vec3 uMinCorner;
 uniform vec3 uMaxCorner;
 uniform vec3 uTextureScale;

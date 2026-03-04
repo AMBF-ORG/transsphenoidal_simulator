@@ -38,7 +38,7 @@
 #  $Rev:  $
 
 cmake_minimum_required (VERSION 3.3)
-project (volumetric_plugin)
+project (transsphenoidal_simulator)
 
 set(CMAKE_CXX_STANDARD 11)
 
@@ -74,7 +74,7 @@ else(catkin_FOUND)
       foreach (_dep ${ROS2_depends})
         find_package (${_dep} REQUIRED)
       endforeach()
-  endif (ament_cmake_FOUND)
+  endif (ament_cmake_FOUND) 
 endif(catkin_FOUND)
 
 include_directories(${AMBF_INCLUDE_DIRS})
@@ -85,7 +85,7 @@ add_definitions(${AMBF_DEFINITIONS})
 
 set (vol_plugin_prefix "volumetric_drilling")
 
-add_library(volumetric_drilling SHARED
+add_library(transsphenoidal_simulator SHARED
     ${vol_plugin_prefix}/common.h
     ${vol_plugin_prefix}/volumetric_drilling.cpp
     ${vol_plugin_prefix}/volumetric_drilling.h
@@ -107,21 +107,21 @@ add_library(volumetric_drilling SHARED
   ${vol_plugin_prefix}/gaze_marker_controller.cpp)
 
 if (AMBF_ROS_VERSION EQUAL 1)
-  add_dependencies (volumetric_drilling ${catkin_EXPORTED_TARGETS})
-  target_link_libraries (volumetric_drilling ${Boost_LIBRARIES} ${AMBF_LIBRARIES} ${catkin_LIBRARIES})
+  add_dependencies (transsphenoidal_simulator ${catkin_EXPORTED_TARGETS})
+  target_link_libraries (transsphenoidal_simulator ${Boost_LIBRARIES} ${AMBF_LIBRARIES} ${catkin_LIBRARIES})
 else ()
   install (
-    TARGETS volumetric_drilling
+    TARGETS transsphenoidal_simulator
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib
     RUNTIME DESTINATION bin
     )
-  ament_target_dependencies (volumetric_drilling ${ROS2_depends})
+  ament_target_dependencies (transsphenoidal_simulator ${ROS2_depends})
   ament_package ()
 endif()
 
-#   add_dependencies(volumetric_drilling ${catkin_EXPORTED_TARGETS})
-# set_property(TARGET volumetric_drilling PROPERTY POSITION_INDEPENDENT_CODE TRUE)
+#   add_dependencies(transsphenoidal_simulator ${catkin_EXPORTED_TARGETS})
+# set_property(TARGET transsphenoidal_simulator PROPERTY POSITION_INDEPENDENT_CODE TRUE)
 
 add_library(camera_hmd camera_hmd/hmd.cpp camera_hmd/hmd.h)
 target_link_libraries(camera_hmd ${AMBF_LIBRARIES})

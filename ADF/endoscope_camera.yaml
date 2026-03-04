@@ -49,7 +49,7 @@ endoscopeCamera:
   plugins: [
     {
       name: camera_distortion_plugin,
-      path: ../plugin/ambf_camera_distortion_plugin/build,
+      path: ../../build,
       filename: libambf_camera_distortion_plugin.so,
       distortion_config: plugin_config/ambf_camera_distortion_plugin/config.yaml,
       vertex_shader: plugin_config/ambf_camera_distortion_plugin/camera_distortion.vs,
