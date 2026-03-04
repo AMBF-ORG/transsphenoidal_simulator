@@ -1,0 +1,19 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from volumetric_drilling_msgs/msg/Voxels.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/ColorRGBA.idl"
+#include "std_msgs/msg/Header.idl"
+#include "volumetric_drilling_msgs/msg/Index.idl"
+
+module volumetric_drilling_msgs {
+  module msg {
+    struct Voxels {
+      std_msgs::msg::Header header;
+
+      sequence<volumetric_drilling_msgs::msg::Index> indices;
+
+      sequence<std_msgs::msg::ColorRGBA> colors;
+    };
+  };
+};

@@ -1,0 +1,140 @@
+[0.009s] Invoking command in '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/volumetric_drilling_msgs -DCMAKE_INSTALL_PREFIX=/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_drilling_msgs
+[0.057s] -- The C compiler identification is GNU 11.4.0
+[0.101s] -- The CXX compiler identification is GNU 11.4.0
+[0.107s] -- Detecting C compiler ABI info
+[0.164s] -- Detecting C compiler ABI info - done
+[0.171s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.172s] -- Detecting C compile features
+[0.172s] -- Detecting C compile features - done
+[0.175s] -- Detecting CXX compiler ABI info
+[0.244s] -- Detecting CXX compiler ABI info - done
+[0.252s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.252s] -- Detecting CXX compile features
+[0.252s] -- Detecting CXX compile features - done
+[0.510s] -- Found Python3: /home/zmao16/miniconda3/bin/python3 (found version "3.13.9") found components: Interpreter 
+[0.590s] -- Found rclcpp: 16.0.18 (/opt/ros/humble/share/rclcpp/cmake)
+[0.627s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.631s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.638s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.647s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.659s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.694s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.696s] -- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.781s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.806s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.843s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.851s] -- Looking for pthread.h
+[0.913s] -- Looking for pthread.h - found
+[0.914s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.978s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.979s] -- Found Threads: TRUE  
+[1.015s] -- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.024s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[1.259s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.543s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.650s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.663s] -- Found PythonInterp: /home/zmao16/miniconda3/bin/python3 (found suitable version "3.13.9", minimum required is "3.6") 
+[1.665s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.680s] -- Found PythonLibs: /home/zmao16/miniconda3/lib/libpython3.13.so (found suitable version "3.13.9", minimum required is "3.5") 
+[1.680s] -- Using PYTHON_EXECUTABLE: /home/zmao16/miniconda3/bin/python3
+[1.681s] -- Using PYTHON_INCLUDE_DIRS: /home/zmao16/miniconda3/include/python3.13
+[1.681s] -- Using PYTHON_LIBRARIES: /home/zmao16/miniconda3/lib/libpython3.13.so
+[1.694s] -- Found PythonExtra: .so  
+[1.792s] -- Using numpy include directory: /home/zmao16/miniconda3/lib/python3.13/site-packages/numpy/_core/include
+[1.804s] -- Configuring done
+[1.836s] -- Generating done
+[1.845s] -- Build files have been written to: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs
+[1.857s] Invoked command in '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/volumetric_drilling_msgs -DCMAKE_INSTALL_PREFIX=/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_drilling_msgs
+[1.858s] Invoking command in '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs -- -j48 -l48
+[1.893s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.901s] [  3%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.906s] [  3%] Built target ament_cmake_python_copy_volumetric_drilling_msgs
+[2.044s] running egg_info
+[2.054s] creating volumetric_drilling_msgs.egg-info
+[2.054s] writing volumetric_drilling_msgs.egg-info/PKG-INFO
+[2.055s] writing dependency_links to volumetric_drilling_msgs.egg-info/dependency_links.txt
+[2.055s] writing top-level names to volumetric_drilling_msgs.egg-info/top_level.txt
+[2.055s] writing manifest file 'volumetric_drilling_msgs.egg-info/SOURCES.txt'
+[2.085s] reading manifest file 'volumetric_drilling_msgs.egg-info/SOURCES.txt'
+[2.086s] writing manifest file 'volumetric_drilling_msgs.egg-info/SOURCES.txt'
+[2.105s] [  3%] Built target ament_cmake_python_build_volumetric_drilling_msgs_egg
+[2.110s] [  3%] Built target volumetric_drilling_msgs__cpp
+[2.114s] [  5%] [32mBuilding C object CMakeFiles/volumetric_drilling_msgs__rosidl_generator_c.dir/rosidl_generator_c/volumetric_drilling_msgs/msg/detail/index__functions.c.o[0m
+[2.114s] [  7%] [32mBuilding C object CMakeFiles/volumetric_drilling_msgs__rosidl_generator_c.dir/rosidl_generator_c/volumetric_drilling_msgs/msg/detail/drill_size__functions.c.o[0m
+[2.114s] [  9%] [32mBuilding C object CMakeFiles/volumetric_drilling_msgs__rosidl_generator_c.dir/rosidl_generator_c/volumetric_drilling_msgs/msg/detail/volume_info__functions.c.o[0m
+[2.114s] [ 10%] [32mBuilding C object CMakeFiles/volumetric_drilling_msgs__rosidl_generator_c.dir/rosidl_generator_c/volumetric_drilling_msgs/msg/detail/voxels__functions.c.o[0m
+[2.118s] [ 14%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.118s] [ 16%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.118s] [ 16%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.150s] [ 18%] [32m[1mLinking C shared library libvolumetric_drilling_msgs__rosidl_generator_c.so[0m
+[2.177s] [ 18%] Built target volumetric_drilling_msgs__rosidl_generator_c
+[2.185s] [ 21%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.185s] [ 21%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.185s] [ 23%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[2.285s] [ 25%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/volumetric_drilling_msgs/msg/index__type_support.cpp.o[0m
+[2.286s] [ 27%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/volumetric_drilling_msgs/msg/drill_size__type_support.cpp.o[0m
+[2.286s] [ 29%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/volumetric_drilling_msgs/msg/volume_info__type_support.cpp.o[0m
+[2.286s] [ 30%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/volumetric_drilling_msgs/msg/voxels__type_support.cpp.o[0m
+[2.306s] [ 32%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/index__type_support.cpp.o[0m
+[2.306s] [ 34%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/voxels__type_support.cpp.o[0m
+[2.306s] [ 36%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/drill_size__type_support.cpp.o[0m
+[2.306s] [ 38%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/volume_info__type_support.cpp.o[0m
+[2.318s] [ 40%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/volumetric_drilling_msgs/msg/detail/dds_fastrtps/index__type_support.cpp.o[0m
+[2.318s] [ 41%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/volumetric_drilling_msgs/msg/detail/dds_fastrtps/voxels__type_support.cpp.o[0m
+[2.318s] [ 43%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/volumetric_drilling_msgs/msg/detail/dds_fastrtps/drill_size__type_support.cpp.o[0m
+[2.318s] [ 45%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/volumetric_drilling_msgs/msg/detail/dds_fastrtps/volume_info__type_support.cpp.o[0m
+[2.352s] [ 49%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/volumetric_drilling_msgs/msg/drill_size__type_support.cpp.o[0m
+[2.353s] [ 49%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/volumetric_drilling_msgs/msg/volume_info__type_support.cpp.o[0m
+[2.353s] [ 50%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/volumetric_drilling_msgs/msg/voxels__type_support.cpp.o[0m
+[2.353s] [ 52%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/volumetric_drilling_msgs/msg/index__type_support.cpp.o[0m
+[2.378s] [ 54%] [32m[1mLinking CXX shared library libvolumetric_drilling_msgs__rosidl_typesupport_c.so[0m
+[2.380s] [ 58%] [32mBuilding C object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/volumetric_drilling_msgs/msg/detail/index__type_support.c.o[0m
+[2.381s] [ 58%] [32mBuilding C object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/volumetric_drilling_msgs/msg/detail/voxels__type_support.c.o[0m
+[2.381s] [ 60%] [32mBuilding C object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/volumetric_drilling_msgs/msg/detail/volume_info__type_support.c.o[0m
+[2.381s] [ 61%] [32mBuilding C object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/volumetric_drilling_msgs/msg/detail/drill_size__type_support.c.o[0m
+[2.385s] [ 63%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/volumetric_drilling_msgs/msg/detail/index__type_support_c.cpp.o[0m
+[2.386s] [ 67%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/volumetric_drilling_msgs/msg/detail/voxels__type_support_c.cpp.o[0m
+[2.386s] [ 67%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/volumetric_drilling_msgs/msg/detail/drill_size__type_support_c.cpp.o[0m
+[2.386s] [ 69%] [32mBuilding CXX object CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/volumetric_drilling_msgs/msg/detail/volume_info__type_support_c.cpp.o[0m
+[2.410s] [ 69%] Built target volumetric_drilling_msgs__rosidl_typesupport_c
+[2.412s] [ 70%] [32m[1mLinking C shared library libvolumetric_drilling_msgs__rosidl_typesupport_introspection_c.so[0m
+[2.438s] In file included from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_generator_cpp/volumetric_drilling_msgs/msg/detail/drill_size__struct.hpp:15[m[K,
+[2.439s]                  from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/drill_size__type_support.cpp:12[m[K:
+[2.439s] [01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kemplace_back[m[K’ function uses ‘[01m[Kauto[m[K’ type specifier without trailing return type
+[2.439s]   477 |   [01;31m[Kauto[m[K
+[2.439s]       |   [01;31m[K^~~~[m[K
+[2.439s] [01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;36m[Knote: [m[Kdeduced return type only available with ‘[01m[K-std=c++14[m[K’ or ‘[01m[K-std=gnu++14[m[K’
+[2.439s] [ 70%] Built target volumetric_drilling_msgs__rosidl_typesupport_introspection_c
+[2.440s] In file included from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_generator_cpp/volumetric_drilling_msgs/msg/detail/voxels__struct.hpp:15[m[K,
+[2.440s]                  from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/voxels__type_support.cpp:12[m[K:
+[2.440s] [01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kemplace_back[m[K’ function uses ‘[01m[Kauto[m[K’ type specifier without trailing return type
+[2.440s]   477 |   [01;31m[Kauto[m[K
+[2.440s]       |   [01;31m[K^~~~[m[K
+[2.440s] [01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;36m[Knote: [m[Kdeduced return type only available with ‘[01m[K-std=c++14[m[K’ or ‘[01m[K-std=gnu++14[m[K’
+[2.441s] In file included from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_generator_cpp/volumetric_drilling_msgs/msg/detail/index__struct.hpp:15[m[K,
+[2.441s]                  from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/index__type_support.cpp:12[m[K:
+[2.441s] [01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kemplace_back[m[K’ function uses ‘[01m[Kauto[m[K’ type specifier without trailing return type
+[2.441s]   477 |   [01;31m[Kauto[m[K
+[2.441s]       |   [01;31m[K^~~~[m[K
+[2.441s] [01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;36m[Knote: [m[Kdeduced return type only available with ‘[01m[K-std=c++14[m[K’ or ‘[01m[K-std=gnu++14[m[K’
+[2.441s] In file included from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_generator_cpp/volumetric_drilling_msgs/msg/detail/volume_info__struct.hpp:15[m[K,
+[2.442s]                  from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/volume_info__type_support.cpp:12[m[K:
+[2.442s] [01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kemplace_back[m[K’ function uses ‘[01m[Kauto[m[K’ type specifier without trailing return type
+[2.442s]   477 |   [01;31m[Kauto[m[K
+[2.442s]       |   [01;31m[K^~~~[m[K
+[2.442s] [01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;36m[Knote: [m[Kdeduced return type only available with ‘[01m[K-std=c++14[m[K’ or ‘[01m[K-std=gnu++14[m[K’
+[2.456s] gmake[2]: *** [CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/build.make:204: CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/drill_size__type_support.cpp.o] Error 1
+[2.456s] gmake[2]: *** Waiting for unfinished jobs....
+[2.457s] gmake[2]: *** [CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/build.make:176: CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/index__type_support.cpp.o] Error 1
+[2.462s] [ 72%] [32m[1mLinking CXX shared library libvolumetric_drilling_msgs__rosidl_typesupport_cpp.so[0m
+[2.473s] gmake[2]: *** [CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/build.make:190: CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/voxels__type_support.cpp.o] Error 1
+[2.475s] gmake[2]: *** [CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/build.make:218: CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/volume_info__type_support.cpp.o] Error 1
+[2.475s] gmake[1]: *** [CMakeFiles/Makefile2:369: CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/all] Error 2
+[2.475s] gmake[1]: *** Waiting for unfinished jobs....
+[2.494s] [ 72%] Built target volumetric_drilling_msgs__rosidl_typesupport_cpp
+[2.604s] [ 74%] [32m[1mLinking CXX shared library libvolumetric_drilling_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[2.628s] [ 76%] [32m[1mLinking CXX shared library libvolumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.658s] [ 76%] Built target volumetric_drilling_msgs__rosidl_typesupport_fastrtps_c
+[2.684s] [ 76%] Built target volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp
+[2.685s] gmake: *** [Makefile:146: all] Error 2
+[2.688s] Invoked command in '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs -- -j48 -l48

@@ -1,10 +1,11 @@
 ADF Version: 1.0
 volumes:
-- VOLUME volume
+- VOLUME mastoidectomy_volume
 bodies:
 - BODY volume_Anatomical_Origin
-VOLUME volume:
-  name: volume
+
+VOLUME mastoidectomy_volume:
+  name: mastoidectomy_volume
   location:
     position:
       x: 0.013528576504419505
@@ -30,6 +31,7 @@ VOLUME volume:
     path: shaders/volume
     vertex: shader.vs
     fragment: shader.fs
+
 BODY volume_Anatomical_Origin:
   name: volume_Anatomical_Origin
   location:

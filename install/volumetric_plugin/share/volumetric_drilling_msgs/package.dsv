@@ -1,0 +1,4 @@
+source;share/volumetric_drilling_msgs/local_setup.bash
+source;share/volumetric_drilling_msgs/local_setup.dsv
+source;share/volumetric_drilling_msgs/local_setup.sh
+source;share/volumetric_drilling_msgs/local_setup.zsh

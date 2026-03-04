@@ -1,0 +1,322 @@
+[0.009s] Invoking command in '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_plugin': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator -DCMAKE_INSTALL_PREFIX=/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin
+[0.055s] -- The C compiler identification is GNU 11.4.0
+[0.097s] -- The CXX compiler identification is GNU 11.4.0
+[0.103s] -- Detecting C compiler ABI info
+[0.163s] -- Detecting C compiler ABI info - done
+[0.175s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.175s] -- Detecting C compile features
+[0.176s] -- Detecting C compile features - done
+[0.179s] -- Detecting CXX compiler ABI info
+[0.244s] -- Detecting CXX compiler ABI info - done
+[0.255s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.256s] -- Detecting CXX compile features
+[0.256s] -- Detecting CXX compile features - done
+[0.283s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: program_options filesystem 
+[0.297s] -- Found ament_cmake: 1.3.13 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.540s] -- Found Python3: /home/zmao16/miniconda3/bin/python3 (found version "3.13.9") found components: Interpreter 
+[0.653s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.657s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.664s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.702s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.732s] -- Found geometry_msgs: 4.9.1 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.981s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.156s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.374s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.388s] -- Found PythonInterp: /home/zmao16/miniconda3/bin/python3 (found suitable version "3.13.9", minimum required is "3.6") 
+[1.390s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.404s] -- Found PythonLibs: /home/zmao16/miniconda3/lib/libpython3.13.so (found suitable version "3.13.9", minimum required is "3.5") 
+[1.404s] -- Using PYTHON_EXECUTABLE: /home/zmao16/miniconda3/bin/python3
+[1.404s] -- Using PYTHON_INCLUDE_DIRS: /home/zmao16/miniconda3/include/python3.13
+[1.404s] -- Using PYTHON_LIBRARIES: /home/zmao16/miniconda3/lib/libpython3.13.so
+[1.418s] -- Found PythonExtra: .so  
+[1.513s] -- Using numpy include directory: /home/zmao16/miniconda3/lib/python3.13/site-packages/numpy/_core/include
+[1.526s] [33mCMake Warning at CMakeLists.txt:27 (message):
+[1.526s]   ROS1 (roscpp) not found -> skipping volumetric_drilling (ROS1-only:
+[1.526s]   includes ros/ros.h, ros/subscriber.h).
+[1.526s] 
+[1.526s] [0m
+[1.526s] -- Configuring done
+[1.562s] -- Generating done
+[1.571s] -- Build files have been written to: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_plugin
+[1.580s] Invoked command in '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_plugin' returned '0': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator -DCMAKE_INSTALL_PREFIX=/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin
+[1.582s] Invoking command in '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_plugin': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_plugin -- -j48 -l48
+[1.618s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.626s] [  3%] [32mBuilding CXX object CMakeFiles/camera_hmd.dir/plugin/camera_hmd/hmd.cpp.o[0m
+[1.627s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.631s] [  5%] Built target ament_cmake_python_copy_volumetric_drilling_msgs
+[1.769s] running egg_info
+[1.780s] creating volumetric_drilling_msgs.egg-info
+[1.780s] writing volumetric_drilling_msgs.egg-info/PKG-INFO
+[1.780s] writing dependency_links to volumetric_drilling_msgs.egg-info/dependency_links.txt
+[1.780s] writing top-level names to volumetric_drilling_msgs.egg-info/top_level.txt
+[1.780s] writing manifest file 'volumetric_drilling_msgs.egg-info/SOURCES.txt'
+[1.810s] reading manifest file 'volumetric_drilling_msgs.egg-info/SOURCES.txt'
+[1.811s] writing manifest file 'volumetric_drilling_msgs.egg-info/SOURCES.txt'
+[1.830s] [  5%] Built target ament_cmake_python_build_volumetric_drilling_msgs_egg
+[1.836s] [  5%] Built target volumetric_drilling_msgs__cpp
+[1.841s] [  7%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_generator_c.dir/rosidl_generator_c/volumetric_drilling_msgs/msg/detail/voxels__functions.c.o[0m
+[1.841s] [  8%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_generator_c.dir/rosidl_generator_c/volumetric_drilling_msgs/msg/detail/volume_info__functions.c.o[0m
+[1.841s] [ 10%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_generator_c.dir/rosidl_generator_c/volumetric_drilling_msgs/msg/detail/drill_size__functions.c.o[0m
+[1.842s] [ 12%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_generator_c.dir/rosidl_generator_c/volumetric_drilling_msgs/msg/detail/index__functions.c.o[0m
+[1.844s] [ 14%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.844s] [ 15%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.844s] [ 17%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.880s] [ 19%] [32m[1mLinking C shared library libvolumetric_drilling_msgs__rosidl_generator_c.so[0m
+[1.910s] [ 19%] Built target volumetric_drilling_msgs__rosidl_generator_c
+[1.918s] [ 21%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.918s] [ 22%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.919s] [ 24%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[2.014s] [ 28%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/volumetric_drilling_msgs/msg/index__type_support.cpp.o[0m
+[2.014s] [ 28%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/volumetric_drilling_msgs/msg/voxels__type_support.cpp.o[0m
+[2.016s] [ 29%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/volumetric_drilling_msgs/msg/volume_info__type_support.cpp.o[0m
+[2.016s] [ 31%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/volumetric_drilling_msgs/msg/drill_size__type_support.cpp.o[0m
+[2.031s] [ 33%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/index__type_support.cpp.o[0m
+[2.031s] [ 35%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/drill_size__type_support.cpp.o[0m
+[2.031s] [ 36%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/volume_info__type_support.cpp.o[0m
+[2.031s] [ 38%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/voxels__type_support.cpp.o[0m
+[2.043s] [ 40%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/volumetric_drilling_msgs/msg/detail/dds_fastrtps/index__type_support.cpp.o[0m
+[2.044s] [ 43%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/volumetric_drilling_msgs/msg/detail/dds_fastrtps/voxels__type_support.cpp.o[0m
+[2.044s] [ 43%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/volumetric_drilling_msgs/msg/detail/dds_fastrtps/volume_info__type_support.cpp.o[0m
+[2.044s] [ 45%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/volumetric_drilling_msgs/msg/detail/dds_fastrtps/drill_size__type_support.cpp.o[0m
+[2.090s] [ 49%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/volumetric_drilling_msgs/msg/voxels__type_support.cpp.o[0m
+[2.090s] [ 49%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/volumetric_drilling_msgs/msg/index__type_support.cpp.o[0m
+[2.091s] [ 50%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/volumetric_drilling_msgs/msg/drill_size__type_support.cpp.o[0m
+[2.091s] [ 52%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/volumetric_drilling_msgs/msg/volume_info__type_support.cpp.o[0m
+[2.115s] [ 54%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/volumetric_drilling_msgs/msg/detail/index__type_support.c.o[0m
+[2.115s] [ 57%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/volumetric_drilling_msgs/msg/detail/voxels__type_support.c.o[0m
+[2.115s] [ 57%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/volumetric_drilling_msgs/msg/detail/volume_info__type_support.c.o[0m
+[2.115s] [ 59%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/volumetric_drilling_msgs/msg/detail/drill_size__type_support.c.o[0m
+[2.118s] [ 61%] [32m[1mLinking CXX shared library libvolumetric_drilling_msgs__rosidl_typesupport_c.so[0m
+[2.119s] [ 63%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/volumetric_drilling_msgs/msg/detail/index__type_support_c.cpp.o[0m
+[2.119s] [ 66%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/volumetric_drilling_msgs/msg/detail/drill_size__type_support_c.cpp.o[0m
+[2.120s] [ 66%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/volumetric_drilling_msgs/msg/detail/voxels__type_support_c.cpp.o[0m
+[2.120s] [ 68%] [32mBuilding CXX object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/volumetric_drilling_msgs/msg/detail/volume_info__type_support_c.cpp.o[0m
+[2.149s] [ 70%] [32m[1mLinking C shared library libvolumetric_drilling_msgs__rosidl_typesupport_introspection_c.so[0m
+[2.150s] [ 70%] Built target volumetric_drilling_msgs__rosidl_typesupport_c
+[2.176s] [ 70%] Built target volumetric_drilling_msgs__rosidl_typesupport_introspection_c
+[2.195s] [ 71%] [32m[1mLinking CXX shared library libvolumetric_drilling_msgs__rosidl_typesupport_cpp.so[0m
+[2.227s] [ 71%] Built target volumetric_drilling_msgs__rosidl_typesupport_cpp
+[2.327s] [ 73%] [32m[1mLinking CXX shared library libvolumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[2.359s] [ 75%] [32m[1mLinking CXX shared library libvolumetric_drilling_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[2.361s] [ 77%] [32m[1mLinking CXX shared library libvolumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.380s] [ 77%] Built target volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp
+[2.411s] [ 77%] Built target volumetric_drilling_msgs__rosidl_typesupport_fastrtps_c
+[2.414s] [ 77%] Built target volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp
+[2.431s] [ 77%] Built target volumetric_drilling_msgs
+[2.448s] [ 78%] [34m[1mGenerating Python code for ROS interfaces[0m
+[2.739s] [ 78%] Built target volumetric_drilling_msgs__py
+[2.756s] [ 82%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_generator_py.dir/rosidl_generator_py/volumetric_drilling_msgs/msg/_voxels_s.c.o[0m
+[2.756s] [ 82%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_generator_py.dir/rosidl_generator_py/volumetric_drilling_msgs/msg/_index_s.c.o[0m
+[2.757s] [ 84%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_generator_py.dir/rosidl_generator_py/volumetric_drilling_msgs/msg/_drill_size_s.c.o[0m
+[2.757s] [ 85%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_generator_py.dir/rosidl_generator_py/volumetric_drilling_msgs/msg/_volume_info_s.c.o[0m
+[2.855s] [ 87%] [32m[1mLinking C shared library rosidl_generator_py/volumetric_drilling_msgs/libvolumetric_drilling_msgs__rosidl_generator_py.so[0m
+[2.893s] [ 87%] Built target volumetric_drilling_msgs__rosidl_generator_py
+[2.908s] [ 89%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/volumetric_drilling_msgs/_volumetric_drilling_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[2.908s] [ 91%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/volumetric_drilling_msgs/_volumetric_drilling_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[2.909s] [ 92%] [32mBuilding C object volumetric_drilling_msgs/CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/volumetric_drilling_msgs/_volumetric_drilling_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[2.991s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/volumetric_drilling_msgs/volumetric_drilling_msgs_s__rosidl_typesupport_c.cpython-313-x86_64-linux-gnu.so[0m
+[2.992s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/volumetric_drilling_msgs/volumetric_drilling_msgs_s__rosidl_typesupport_introspection_c.cpython-313-x86_64-linux-gnu.so[0m
+[2.993s] [ 98%] [32m[1mLinking C shared library rosidl_generator_py/volumetric_drilling_msgs/volumetric_drilling_msgs_s__rosidl_typesupport_fastrtps_c.cpython-313-x86_64-linux-gnu.so[0m
+[3.021s] [ 98%] Built target volumetric_drilling_msgs__rosidl_typesupport_c__pyext
+[3.023s] [ 98%] Built target volumetric_drilling_msgs__rosidl_typesupport_introspection_c__pyext
+[3.024s] [ 98%] Built target volumetric_drilling_msgs__rosidl_typesupport_fastrtps_c__pyext
+[3.181s] [100%] [32m[1mLinking CXX shared library libcamera_hmd.so[0m
+[3.375s] [100%] Built target camera_hmd
+[3.385s] Invoked command in '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_plugin' returned '0': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_plugin -- -j48 -l48
+[3.394s] Invoking command in '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_plugin': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_plugin
+[3.399s] -- Install configuration: ""
+[3.400s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/ament_index/resource_index/rosidl_interfaces/volumetric_drilling_msgs
+[3.400s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs
+[3.400s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg
+[3.401s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/drill_size.h
+[3.401s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail
+[3.401s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__functions.c
+[3.401s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__type_support.h
+[3.401s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__functions.h
+[3.401s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__functions.c
+[3.401s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__functions.h
+[3.402s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__struct.h
+[3.402s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__type_support.h
+[3.402s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__struct.h
+[3.402s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__functions.c
+[3.402s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__struct.h
+[3.402s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__functions.h
+[3.403s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__struct.h
+[3.403s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__functions.c
+[3.403s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__type_support.h
+[3.403s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__type_support.h
+[3.403s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__functions.h
+[3.403s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/volume_info.h
+[3.403s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/index.h
+[3.404s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/rosidl_generator_c__visibility_control.h
+[3.404s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/voxels.h
+[3.404s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/environment/library_path.sh
+[3.404s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/environment/library_path.dsv
+[3.404s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_generator_c.so
+[3.404s] -- Set runtime path of "/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_generator_c.so" to ""
+[3.404s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs
+[3.405s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg
+[3.405s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail
+[3.405s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__rosidl_typesupport_fastrtps_c.h
+[3.405s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__rosidl_typesupport_fastrtps_c.h
+[3.405s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__rosidl_typesupport_fastrtps_c.h
+[3.405s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__rosidl_typesupport_fastrtps_c.h
+[3.405s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.406s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_typesupport_fastrtps_c.so
+[3.406s] -- Set runtime path of "/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[3.406s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs
+[3.406s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg
+[3.406s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail
+[3.406s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__type_support.c
+[3.406s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__rosidl_typesupport_introspection_c.h
+[3.407s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__type_support.c
+[3.407s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__type_support.c
+[3.407s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__rosidl_typesupport_introspection_c.h
+[3.407s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__rosidl_typesupport_introspection_c.h
+[3.407s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__type_support.c
+[3.407s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__rosidl_typesupport_introspection_c.h
+[3.407s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.408s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_typesupport_introspection_c.so
+[3.408s] -- Set runtime path of "/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_typesupport_introspection_c.so" to ""
+[3.408s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_typesupport_c.so
+[3.408s] -- Set runtime path of "/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_typesupport_c.so" to ""
+[3.408s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs
+[3.408s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg
+[3.408s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[3.409s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail
+[3.409s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__traits.hpp
+[3.409s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__builder.hpp
+[3.409s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__traits.hpp
+[3.409s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__type_support.hpp
+[3.409s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__type_support.hpp
+[3.409s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__struct.hpp
+[3.409s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__type_support.hpp
+[3.410s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__struct.hpp
+[3.410s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__type_support.hpp
+[3.410s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__traits.hpp
+[3.410s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__traits.hpp
+[3.410s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__struct.hpp
+[3.410s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__builder.hpp
+[3.410s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__builder.hpp
+[3.411s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__struct.hpp
+[3.411s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__builder.hpp
+[3.411s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/volume_info.hpp
+[3.411s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/index.hpp
+[3.411s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/voxels.hpp
+[3.411s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/drill_size.hpp
+[3.411s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs
+[3.411s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg
+[3.412s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.412s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail
+[3.412s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__rosidl_typesupport_fastrtps_cpp.hpp
+[3.412s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__rosidl_typesupport_fastrtps_cpp.hpp
+[3.412s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__rosidl_typesupport_fastrtps_cpp.hpp
+[3.412s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/dds_fastrtps
+[3.412s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__rosidl_typesupport_fastrtps_cpp.hpp
+[3.413s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp.so
+[3.413s] -- Set runtime path of "/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[3.413s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs
+[3.413s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg
+[3.413s] -- Up-to-date: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail
+[3.413s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__type_support.cpp
+[3.413s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__rosidl_typesupport_introspection_cpp.hpp
+[3.414s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/index__type_support.cpp
+[3.414s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__rosidl_typesupport_introspection_cpp.hpp
+[3.414s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/voxels__rosidl_typesupport_introspection_cpp.hpp
+[3.414s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__rosidl_typesupport_introspection_cpp.hpp
+[3.414s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/volume_info__type_support.cpp
+[3.414s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/include/volumetric_drilling_msgs/volumetric_drilling_msgs/msg/detail/drill_size__type_support.cpp
+[3.414s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.so
+[3.414s] -- Set runtime path of "/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[3.414s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_typesupport_cpp.so
+[3.415s] -- Set runtime path of "/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_typesupport_cpp.so" to ""
+[3.415s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/environment/pythonpath.sh
+[3.415s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/environment/pythonpath.dsv
+[3.415s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs-0.0.0-py3.13.egg-info
+[3.415s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs-0.0.0-py3.13.egg-info/dependency_links.txt
+[3.415s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs-0.0.0-py3.13.egg-info/top_level.txt
+[3.415s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs-0.0.0-py3.13.egg-info/PKG-INFO
+[3.415s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs-0.0.0-py3.13.egg-info/SOURCES.txt
+[3.415s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs
+[3.415s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/volumetric_drilling_msgs_s__rosidl_typesupport_c.cpython-313-x86_64-linux-gnu.so
+[3.415s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg
+[3.416s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/_drill_size_s.c
+[3.416s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/_voxels_s.c
+[3.416s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/_voxels.py
+[3.416s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/_volume_info_s.c
+[3.416s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/_drill_size.py
+[3.416s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/_index.py
+[3.416s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/_index_s.c
+[3.416s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/_volume_info.py
+[3.416s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/__init__.py
+[3.416s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/volumetric_drilling_msgs_s__rosidl_typesupport_introspection_c.cpython-313-x86_64-linux-gnu.so
+[3.416s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/_volumetric_drilling_msgs_s.ep.rosidl_typesupport_c.c
+[3.417s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/volumetric_drilling_msgs_s__rosidl_typesupport_fastrtps_c.cpython-313-x86_64-linux-gnu.so
+[3.417s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/_volumetric_drilling_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[3.417s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/_volumetric_drilling_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[3.417s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/libvolumetric_drilling_msgs__rosidl_generator_py.so
+[3.417s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/__init__.py
+[3.441s] Listing '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs'...
+[3.441s] Compiling '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/__init__.py'...
+[3.441s] Listing '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg'...
+[3.441s] Compiling '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/__init__.py'...
+[3.441s] Compiling '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/_drill_size.py'...
+[3.441s] Compiling '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/_index.py'...
+[3.441s] Compiling '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/_volume_info.py'...
+[3.441s] Compiling '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/msg/_voxels.py'...
+[3.444s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/volumetric_drilling_msgs_s__rosidl_typesupport_fastrtps_c.cpython-313-x86_64-linux-gnu.so
+[3.444s] -- Set runtime path of "/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/volumetric_drilling_msgs_s__rosidl_typesupport_fastrtps_c.cpython-313-x86_64-linux-gnu.so" to ""
+[3.444s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/volumetric_drilling_msgs_s__rosidl_typesupport_introspection_c.cpython-313-x86_64-linux-gnu.so
+[3.444s] -- Set runtime path of "/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/volumetric_drilling_msgs_s__rosidl_typesupport_introspection_c.cpython-313-x86_64-linux-gnu.so" to ""
+[3.445s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/volumetric_drilling_msgs_s__rosidl_typesupport_c.cpython-313-x86_64-linux-gnu.so
+[3.445s] -- Set runtime path of "/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/python3.13/site-packages/volumetric_drilling_msgs/volumetric_drilling_msgs_s__rosidl_typesupport_c.cpython-313-x86_64-linux-gnu.so" to ""
+[3.445s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_generator_py.so
+[3.445s] -- Set runtime path of "/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/lib/libvolumetric_drilling_msgs__rosidl_generator_py.so" to ""
+[3.445s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/msg/Index.idl
+[3.446s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/msg/Voxels.idl
+[3.446s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/msg/DrillSize.idl
+[3.446s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/msg/VolumeInfo.idl
+[3.446s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/msg/Index.msg
+[3.446s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/msg/Voxels.msg
+[3.446s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/msg/DrillSize.msg
+[3.446s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/msg/VolumeInfo.msg
+[3.447s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/ament_index/resource_index/package_run_dependencies/volumetric_drilling_msgs
+[3.447s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/ament_index/resource_index/parent_prefix_path/volumetric_drilling_msgs
+[3.447s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/environment/ament_prefix_path.sh
+[3.447s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/environment/ament_prefix_path.dsv
+[3.447s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/environment/path.sh
+[3.447s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/environment/path.dsv
+[3.447s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/local_setup.bash
+[3.448s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/local_setup.sh
+[3.448s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/local_setup.zsh
+[3.448s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/local_setup.dsv
+[3.448s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/package.dsv
+[3.448s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/ament_index/resource_index/packages/volumetric_drilling_msgs
+[3.448s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/export_volumetric_drilling_msgs__rosidl_generator_cExport.cmake
+[3.448s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/export_volumetric_drilling_msgs__rosidl_generator_cExport-noconfig.cmake
+[3.448s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/export_volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[3.449s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/export_volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[3.449s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/volumetric_drilling_msgs__rosidl_typesupport_introspection_cExport.cmake
+[3.449s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/volumetric_drilling_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[3.449s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/volumetric_drilling_msgs__rosidl_typesupport_cExport.cmake
+[3.449s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/volumetric_drilling_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[3.449s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/export_volumetric_drilling_msgs__rosidl_generator_cppExport.cmake
+[3.449s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/export_volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[3.450s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/export_volumetric_drilling_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[3.450s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/volumetric_drilling_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[3.450s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/volumetric_drilling_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[3.450s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/volumetric_drilling_msgs__rosidl_typesupport_cppExport.cmake
+[3.450s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/volumetric_drilling_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[3.450s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/export_volumetric_drilling_msgs__rosidl_generator_pyExport.cmake
+[3.451s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/export_volumetric_drilling_msgs__rosidl_generator_pyExport-noconfig.cmake
+[3.451s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/rosidl_cmake-extras.cmake
+[3.451s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.451s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.451s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[3.451s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[3.451s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.451s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.451s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/volumetric_drilling_msgsConfig.cmake
+[3.452s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/cmake/volumetric_drilling_msgsConfig-version.cmake
+[3.452s] -- Installing: /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/install/volumetric_plugin/share/volumetric_drilling_msgs/package.xml
+[3.454s] Invoked command in '/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_plugin' returned '0': CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --install /home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_plugin

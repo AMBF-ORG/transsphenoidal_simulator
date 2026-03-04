@@ -1,38 +1,22 @@
-cmake_minimum_required(VERSION 2.8.3)
-if (POLICY CMP0048)
-    cmake_policy(SET CMP0048 NEW)
-endif (POLICY CMP0048)
+cmake_minimum_required(VERSION 3.8)
 project(volumetric_drilling_msgs)
 
-## Compile as C++11, supported in ROS Kinetic and newer
-add_compile_options(-std=c++11)
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic)
+endif()
 
-find_package(catkin REQUIRED COMPONENTS
-  message_generation
-  geometry_msgs
-  std_msgs
+find_package(ament_cmake REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(std_msgs REQUIRED)
+
+rosidl_generate_interfaces(${PROJECT_NAME}
+  "msg/Index.msg"
+  "msg/Voxels.msg"
+  "msg/DrillSize.msg"
+  "msg/VolumeInfo.msg"
+  DEPENDENCIES geometry_msgs std_msgs
 )
 
-add_message_files(
-  FILES
-  Index.msg
-  Voxels.msg
-  DrillSize.msg
-  VolumeInfo.msg
-)
-
-generate_messages(
-  DEPENDENCIES
-  geometry_msgs
-  std_msgs
-)
-
-catkin_package(
-  CATKIN_DEPENDS message_runtime
-)
-
-
-include_directories(
-  ${catkin_INCLUDE_DIRS}
-
-)
+ament_export_dependencies(rosidl_default_runtime)
+ament_package()
