@@ -1,0 +1,5 @@
+[33mCMake Warning at CMakeLists.txt:27 (message):
+  ROS1 (roscpp) not found -> skipping volumetric_drilling (ROS1-only:
+  includes ros/ros.h, ros/subscriber.h).
+
+[0m

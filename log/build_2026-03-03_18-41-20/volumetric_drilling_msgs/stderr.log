@@ -1,0 +1,32 @@
+In file included from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_generator_cpp/volumetric_drilling_msgs/msg/detail/drill_size__struct.hpp:15[m[K,
+                 from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/drill_size__type_support.cpp:12[m[K:
+[01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kemplace_back[m[K’ function uses ‘[01m[Kauto[m[K’ type specifier without trailing return type
+  477 |   [01;31m[Kauto[m[K
+      |   [01;31m[K^~~~[m[K
+[01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;36m[Knote: [m[Kdeduced return type only available with ‘[01m[K-std=c++14[m[K’ or ‘[01m[K-std=gnu++14[m[K’
+In file included from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_generator_cpp/volumetric_drilling_msgs/msg/detail/voxels__struct.hpp:15[m[K,
+                 from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/voxels__type_support.cpp:12[m[K:
+[01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kemplace_back[m[K’ function uses ‘[01m[Kauto[m[K’ type specifier without trailing return type
+  477 |   [01;31m[Kauto[m[K
+      |   [01;31m[K^~~~[m[K
+[01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;36m[Knote: [m[Kdeduced return type only available with ‘[01m[K-std=c++14[m[K’ or ‘[01m[K-std=gnu++14[m[K’
+In file included from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_generator_cpp/volumetric_drilling_msgs/msg/detail/index__struct.hpp:15[m[K,
+                 from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/index__type_support.cpp:12[m[K:
+[01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kemplace_back[m[K’ function uses ‘[01m[Kauto[m[K’ type specifier without trailing return type
+  477 |   [01;31m[Kauto[m[K
+      |   [01;31m[K^~~~[m[K
+[01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;36m[Knote: [m[Kdeduced return type only available with ‘[01m[K-std=c++14[m[K’ or ‘[01m[K-std=gnu++14[m[K’
+In file included from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_generator_cpp/volumetric_drilling_msgs/msg/detail/volume_info__struct.hpp:15[m[K,
+                 from [01m[K/home/zmao16/ros_ambf_ws/src/transsphenoidal_simulator/build/volumetric_drilling_msgs/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/volume_info__type_support.cpp:12[m[K:
+[01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kemplace_back[m[K’ function uses ‘[01m[Kauto[m[K’ type specifier without trailing return type
+  477 |   [01;31m[Kauto[m[K
+      |   [01;31m[K^~~~[m[K
+[01m[K/opt/ros/humble/include/rosidl_runtime_cpp/rosidl_runtime_cpp/bounded_vector.hpp:477:3:[m[K [01;36m[Knote: [m[Kdeduced return type only available with ‘[01m[K-std=c++14[m[K’ or ‘[01m[K-std=gnu++14[m[K’
+gmake[2]: *** [CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/build.make:204: CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/drill_size__type_support.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/build.make:176: CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/index__type_support.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/build.make:190: CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/voxels__type_support.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/build.make:218: CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/volumetric_drilling_msgs/msg/detail/volume_info__type_support.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:369: CMakeFiles/volumetric_drilling_msgs__rosidl_typesupport_introspection_cpp.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

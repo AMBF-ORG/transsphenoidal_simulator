@@ -1,0 +1,20 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from volumetric_drilling_msgs/msg/VolumeInfo.msg
+// generated code does not contain a copyright notice
+
+#include "geometry_msgs/msg/Pose.idl"
+#include "std_msgs/msg/Header.idl"
+
+module volumetric_drilling_msgs {
+  module msg {
+    struct VolumeInfo {
+      std_msgs::msg::Header header;
+
+      geometry_msgs::msg::Pose pose;
+
+      sequence<float> dimensions;
+
+      sequence<int32> voxel_count;
+    };
+  };
+};
