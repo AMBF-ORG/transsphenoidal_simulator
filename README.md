@@ -51,25 +51,39 @@ Build and source ambf (make sure you're on branch ambf-2.0 before building) as p
 ``` bash
 cd ~/ros_ambf_ws/src
 git clone git@github.com:AMBF-ORG/transsphenoidal_simulator.git
-cd ~/ros_ambf_ws
-colcon build
 ```
 
-### 1.3 Clone and Build Camera Distortion Plugin
+### 1.3 Clone Camera Distortion Plugin
 Follow the instructions here: https://github.com/AMBF-ORG/ambf_camera_distortion_plugin.
 **⚠️ Important:** Make sure to use 'ros2' branch
 
 Note that `transsphenoidal_simulator/plugin_config/ambf_camera_distortion_plugin/` and `transsphenoidal_simulator/ADF/endoscope_camera.yaml` reference this plugin.
 
-<!-- **⚠️ Important:** We also need to create a symlink to the plugin:
+```bash
+cd ~/ros_ambf_ws/src
+git clone git@github.com:AMBF-ORG/ambf_camera_distortion_plugin.git
+cd ambf_camera_distortion_plugin 
+git checkout ros2 # Use `ros2` branch
+```
+
+### 1.4 Clone AMBF TF plguin
+Follow the instructions here: https://github.com/LCSR-CIIS/ambf_tf_plugin.
+**⚠️ Important:** Make sure to use 'ros2' branch
+
+```bash
+cd ~/ros_ambf_ws/src
+git clone git@github.com:LCSR-CIIS/ambf_tf_plugin.git
+cd ambf_tf_plugin 
+git checkout ros2 # Use `ros2` branch
+```
+## 1.5 Build
 ``` bash
-cd ~/ros_ambf_ws/src/transsphenoidal_simulator/plugin
-ln -s ~/ambf_camera_distortion_plugin
-``` -->
-Note this symlink has a habit of breaking after Git operations and may need to be relinked.
+cd ~/ros_ambf_ws
+colcon build # OR catkin build if you are using ros1
+```
 
 ## 2 Running the Plugin with ambf_simulator:
-The transsphenoidal simulator is a plugin that is launched on top of the AMBF simulator along with other AMBF bodies, described by AMBF Description Format files (ADFs), as will be demonstrated below. The `libvolumetric_drilling.so` plugin is initialized in the `launch.yaml` file and can be commented out for the purpose of debugging the ADF files.   
+The transsphenoidal simulator is a plugin that is launched on top of the AMBF simulator along with other AMBF bodies, described by AMBF Description Format files (ADFs), as will be demonstrated below. The `libtranssphenoidal_simulator.so` plugin is initialized in the `launch.yaml` file and can be commented out for the purpose of debugging the ADF files.   
 
 Below are instructions as to how to load different volume and camera options. The -l tag used below allows user to run indexed multibodies that can also be found in the `launch.yaml` under the `multibody configs:` data block. More info on launching the simulator can be found in the AMBF Wiki:  
 

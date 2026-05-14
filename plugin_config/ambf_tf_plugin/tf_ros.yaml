@@ -1,0 +1,13 @@
+# List of Transformations used in ambf_tf_plugin
+# Author: Hisashi Ishida (hishida3@jhu.edu)
+# Date: 09.18.2024
+
+transformations:
+- TF Endoscope
+
+TF Endoscope:
+  parent: World
+  child: Endoscope 35 degree in REMS
+  type: ROS
+  rostopic name: /Endoscope/command
+

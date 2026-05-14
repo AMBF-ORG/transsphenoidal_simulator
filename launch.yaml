@@ -8,6 +8,11 @@ plugins: [
     name: TRANSSPHENOIDAL_SIMULATOR,
     filename: libtranssphenoidal_simulator.so,
     path: build/transsphenoidal_simulator/
+  },
+  {
+    name: TF_PLUGIN,
+    filename: libambf_tf_plugin.so,
+    path: build/ambf_tf_plugin/
   }
 ]
 multibody configs:
