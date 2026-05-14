@@ -1,0 +1,26 @@
+# This is the base file for Coordination Application
+# world config: ADF/world/world.yaml
+world config: ADF/world/world.yaml
+color config: ADF/color/colors.yaml
+input devices config: ADF/input_devices/input_devices.yaml
+plugins: [
+  # {
+  #   name: TRANSSPHENOIDAL_SIMULATOR,
+  #   filename: libtranssphenoidal_simulator.so,
+  #   path: build/transsphenoidal_simulator/
+  # },
+  {
+    name: TF_PLUGIN,
+    filename: libambf_tf_plugin.so,
+    path: build/ambf_tf_plugin/
+  }
+]
+multibody configs:
+  - "ADF/drills.yaml" #0
+  - "ADF/endoscope_camera.yaml" #1
+  - "ADF/volume.yaml" #2
+  - "ADF/face.yaml" #3
+  - "ADF/nose.yaml" #4
+
+
+# ambf_simulator --launch_file launch.yaml -l 0,1,2,3,4 -t 1 -p 240 --tf_list src/transsphenoidal_simulator/plugin_config/ambf_tf_plugin/tf_ros.yaml

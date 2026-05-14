@@ -67,7 +67,7 @@ endoscopeCamera:
 BODY Endoscope 35 degree in REMS:
   name: Endoscope 35 degree in REMS
   mesh: Endoscope 35 degree in REMS dVRK.OBJ
-  mass: 10.0
+  mass: 0.1
   collision margin: 0.001
   scale: 1.0
   location:
@@ -130,10 +130,10 @@ BODY Endoscope 35 degree in REMS:
       g: 0.09285
       r: 0.13955
     transparency: 1.0
-  controller:
-    linear: {P: 10, I: 0, D: 1}
-    angular: {P: 20, I: 0, D: 1}
-  controller output type: velocity
+  # controller:
+  #   linear: {P: 10, I: 0, D: 1}
+  #   angular: {P: 20, I: 0, D: 1}
+  # controller output type: velocity
   
 BODY Endoscope Tip:
   name: Endoscope Tip
