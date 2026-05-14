@@ -26,10 +26,10 @@ VOLUME volume:
     prefix: slice0
   iso-surface value: 0.5
   parent: BODY volume_Anatomical_Origin
-  shaders:
-    path: shaders/volume
-    vertex: shader.vs
-    fragment: shader.fs
+  # shaders:
+  #   path: shaders/volume
+  #   vertex: shader.vs
+  #   fragment: shader.fs
 BODY volume_Anatomical_Origin:
   name: volume_Anatomical_Origin
   location:

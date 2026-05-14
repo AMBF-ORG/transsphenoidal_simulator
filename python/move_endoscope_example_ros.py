@@ -126,19 +126,16 @@ class MoveEndoscopeExample:
     def move_endoscope(self, targetPose: PyKDL.Frame):
         self.state = Status.MOVING
 
-        # Interpolate if the target pose is within a certain threshold of the current pose
-        needInterpolate, numSteps = self.check_frame_difference(self.get_endoscope_pose(), targetPose)
-        if not needInterpolate:
+        withinThreshold, numSteps = self.check_frame_difference(self.get_endoscope_pose(), targetPose)
+        if withinThreshold:
             self.publish_endoscope_command(targetPose)
-
-        # Interpolate between current pose and target pose
         else:
             currentPose = self.get_endoscope_pose()
             for i in range(1, numSteps + 1):
                 alpha = i / numSteps
                 interpPose = _interpolate_frames(currentPose, targetPose, alpha)
                 self.publish_endoscope_command(interpPose)
-                time.sleep(1.0 / numSteps)  # Sleep to allow time for the command to be processed
+                time.sleep(1.0 / numSteps)
 
         self.state = Status.IDLE
 
@@ -208,6 +205,11 @@ def main(name, cmd_topic):
         logger.info("Received first endoscope state message. Starting to move endoscope pose...")
         
         while rclpy.ok() and moveEndoscopeExample.is_ready():
+            # Command the endoscope to move to the inital pose
+            initialPose = PyKDL.Frame(PyKDL.Rotation.RPY(0.0, 0.0, 0.0), PyKDL.Vector(0.0, 0.0, 0.0))
+            moveEndoscopeExample.move_endoscope(initialPose)
+            time.sleep(1)  # Sleep for a while to let the endoscope reach the initial pose
+
             currentPose = moveEndoscopeExample.get_endoscope_pose()
             for idx, targetRelPose in enumerate(targetRelPoses):
                 logger.info(f"Moving endoscope to #{idx}/{len(targetRelPoses)} target pose: {currentPose * targetRelPose}")
