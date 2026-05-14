@@ -25,3 +25,5 @@ hdf5_files
 
 .cache/
 plugin/ambf_camera_distortion_plugin
+
+volumetric_drilling_msgs/COLCON_IGNORE
